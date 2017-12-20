@@ -44,19 +44,13 @@ class SlimHmacProxy extends \Proxy\Proxy {
                                     'pktempUpdate_infoUsers' => 'restApiDefaultCall',
                                     'pkFillUsersListNpk_infoUsers' => 'restApiDefaultCall',
                                     'pkFillUsersInformationNpk_infoUsers' => 'restApiDefaultCall',
-                                    'pkInsertConsultant_infoUsers' => 'restApiDefaultCall',
-                                    'pkInsertUrgePerson_infoUsers' => 'restApiDefaultCall',
+                                     
                                     'setPersonPassword_infoUsers' => 'restApiDefaultCall',
-        
-                                    'pkUpdateConsUserConfirmAct_infoUsers' => 'restApiDefaultCall',
                                     'pkFillUsersProfileInformationGuest_infoUsers' => 'restApiDefaultCall',
                                     'pkFillUsersProfileInformation_infoUsers' => 'restApiDefaultCall',
                                     'pkGetUserShortInformation_infoUsers' => 'restApiDefaultCall',
 
-        
-        
-        
-        
+          
          //**---- infoUsers -------------------                                        
          //** syscountrys ----------------------
                                     'pkDelete_syscountrys' => 'restApiDefaultCall',

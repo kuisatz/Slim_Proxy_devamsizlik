@@ -28,7 +28,7 @@ class Dal {
           * 
           */
       //  new PDO("sqlsrv:Server=YouAddress;Database=YourDatabase", "Username", "Password");
-          $pdo = new \PDO("sqlsrv:Server=ZZX;Database=BILSANET", 
+          $pdo = new \PDO("sqlsrv:Server=ZZX;Database=BILSANET_DEVAMSIZLIK", 
                             "sa", 
                             "12345678oki"
                             );
