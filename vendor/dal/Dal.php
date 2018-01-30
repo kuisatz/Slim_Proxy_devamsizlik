@@ -43,10 +43,15 @@ class Dal {
                             '1Qaaal123');
             */
        //    print_r("pdo");
-            $pdo = new \PDO("sqlsrv:Server=ZZX;Database=BILSANET_DEVAMSIZLIK", 
+      /*      $pdo = new \PDO("sqlsrv:Server=ZZX;Database=BILSANET_DEVAMSIZLIK", 
                             "sa", 
                             "12345678oki"
                             );
+            */
+        $pdo = new \PDO("sqlsrv:Server=localhost;Database=BILSANET_DEVAMSIZLIK", 
+               "sa", 
+               "12345678Oki."
+               );
             
             
             return $pdo;
