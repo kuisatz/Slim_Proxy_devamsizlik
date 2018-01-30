@@ -1,8 +1,8 @@
 <?php
 /**
- *  Framework 
+ *Framework 
  *
- * @link       
+ * @link 
  * @copyright Copyright (c) 2017
  * @license   
  */
@@ -20,7 +20,10 @@ class SlimHmacProxy extends \Proxy\Proxy {
     protected $redirectMap = array('getReports_test' => 'restApiDefaultCall',
                                     'getDynamicForm_test' => 'restApiDefaultCall',
 
-         
+        
+     
+        
+        
         
         //** leftnavigation ----------------------
                                     'pkDelete_leftnavigation' => 'restApiDefaultCall',
@@ -37,20 +40,29 @@ class SlimHmacProxy extends \Proxy\Proxy {
                                     'pkDelete_infoUsers' => 'restApiDefaultCall',
                                     'pkGetAll_infoUsers' => 'restApiDefaultCall',
                                     'pkInsert_infoUsers' => 'restApiDefaultCall',
-                                    'tempInsert_infoUsers' => 'restApiDefaultCall',
+                                    'tempInsert_infoUsers' => 'restApiDefaultCall', 
                                     'pkUpdate_infoUsers' => 'restApiDefaultCall',
                                     'pkFillGrid_infoUsers' => 'restApiDefaultCall',
                                     'pkDeletedAct_infoUsers' => 'restApiDefaultCall',
                                     'pktempUpdate_infoUsers' => 'restApiDefaultCall',
                                     'pkFillUsersListNpk_infoUsers' => 'restApiDefaultCall',
                                     'pkFillUsersInformationNpk_infoUsers' => 'restApiDefaultCall',
-                                     
+                                    'pkInsertConsultant_infoUsers' => 'restApiDefaultCall',
+                                    'pkInsertUrgePerson_infoUsers' => 'restApiDefaultCall',
                                     'setPersonPassword_infoUsers' => 'restApiDefaultCall',
+        
+                                    'pkUpdateConsUserConfirmAct_infoUsers' => 'restApiDefaultCall',
                                     'pkFillUsersProfileInformationGuest_infoUsers' => 'restApiDefaultCall',
                                     'pkFillUsersProfileInformation_infoUsers' => 'restApiDefaultCall',
                                     'pkGetUserShortInformation_infoUsers' => 'restApiDefaultCall',
-
-          
+                                    'tempInsertSB_infoUsers' => 'restApiDefaultCall',
+                                    'pkTempInsertSB_infoUsers' => 'restApiDefaultCall',
+                                    'pkUpdateTempSB_infoUsers' => 'restApiDefaultCall',
+                                    'pkDeletedActTempSB_infoUsers' => 'restApiDefaultCall',
+                                    'pkFillTempUserLists_infoUsers' => 'restApiDefaultCall',
+                                    'fillTempUserListsx_infoUsers' => 'restApiDefaultCall',
+       
+        
          //**---- infoUsers -------------------                                        
          //** syscountrys ----------------------
                                     'pkDelete_syscountrys' => 'restApiDefaultCall',
@@ -77,11 +89,8 @@ class SlimHmacProxy extends \Proxy\Proxy {
                                     'pkUpdate_syslanguage' => 'restApiDefaultCall',
                                     'pkFillGrid_syslanguage' => 'restApiDefaultCall',
                                     'fillComboBox_syslanguage' => 'restApiDefaultCall', 
-                                    'pkFillLanguageDdList_syslanguage' => 'restApiDefaultCall',  
-         
                                     'fillComboBoxTsql_syslanguage' => 'restApiDefaultCall', 
-        
-        
+                                    'pkFillLanguageDdList_syslanguage' => 'restApiDefaultCall',                                    
          //**---- syslanguage -------------------
           //** sysborough ----------------------
                                     'pkDelete_sysborough' => 'restApiDefaultCall',
@@ -108,7 +117,7 @@ class SlimHmacProxy extends \Proxy\Proxy {
                                     'pkUpdate_blLoginLogout' => 'restApiDefaultCall',
                                     'pkControl_blLoginLogout' => 'restApiDefaultCall',
                                     'pkLoginControl_blLoginLogout' => 'restApiDefaultCall',
-                                    'pkGetPK_blLoginLogout' => 'restApiDefaultCall',  
+                                    'getPK_blLoginLogout' => 'restApiDefaultCall',  
                                     'pkSessionControl_blLoginLogout' => 'restApiDefaultCall',   
                                     'pkIsThere_blLoginLogout' => 'restApiDefaultCall',
                                     'pkAllPkGeneratedFromPrivate_blLoginLogout' => 'restApiDefaultCall',  
@@ -236,7 +245,17 @@ class SlimHmacProxy extends \Proxy\Proxy {
                                     'fillPersonnelTypes_sysSpecificDefinitions' => 'restApiDefaultCall',
                                     'fillAddressTypes_sysSpecificDefinitions' => 'restApiDefaultCall',
                                     'fillSexTypes_sysSpecificDefinitions' => 'restApiDefaultCall',
-         //**---- sysSpecificDefinitions -------------------    
+                                    'fillSubjectsTypes_sysSpecificDefinitions' => 'restApiDefaultCall',
+                                    'fillDifficulty_sysSpecificDefinitions' => 'restApiDefaultCall', 
+                                    'fillQuestionTime_sysSpecificDefinitions' => 'restApiDefaultCall', 
+                                    'fillSubjectTypes_sysSpecificDefinitions' => 'restApiDefaultCall', 
+                                    'fillAnswerTypes_sysSpecificDefinitions' => 'restApiDefaultCall', 
+                                    'fillQuestionSourceType_sysSpecificDefinitions' => 'restApiDefaultCall', 
+                                    'fillEducationType_sysSpecificDefinitions' => 'restApiDefaultCall', 
+        
+        
+        
+        //**---- sysSpecificDefinitions -------------------    
          //** infoUsersCommunications ----------------------
                                     'pkDelete_infoUsersCommunications' => 'restApiDefaultCall',
                                     'pkGetAll_infoUsersCommunications' => 'restApiDefaultCall',
@@ -533,6 +552,7 @@ class SlimHmacProxy extends \Proxy\Proxy {
                                     'pkInsert_infoUsersSendingMail' => 'restApiDefaultCall',
                                     'pkUpdate_infoUsersSendingMail' => 'restApiDefaultCall',
                                     'pkFillGrid_infoUsersSendingMail' => 'restApiDefaultCall',
+                                    'sendMailTempUserRegistration_infoUsersSendingMail' => 'restApiDefaultCall',
          //**---- InfoUsersSendingMail ------------------- 
          //** ActProcessConfirm ----------------------
                                     'pkDelete_actProcessConfirm' => 'restApiDefaultCall',
@@ -550,9 +570,125 @@ class SlimHmacProxy extends \Proxy\Proxy {
                                     'fillComboBox_sysSectors' => 'restApiDefaultCall',                                    
                                     'pkGetSectors_sysSectors' => 'restApiDefaultCall',
                                     'getSectors_sysSectors' => 'restApiDefaultCall',
-        
            
          //**---- syssectors -------------------
+         //** SysCorporation ----------------------
+                                    'pkDelete_sysCorporation' => 'restApiDefaultCall',                                    
+                                    'pkInsert_sysCorporation' => 'restApiDefaultCall',
+                                    'pkUpdate_sysCorporation' => 'restApiDefaultCall',                                    
+                                    'fillCorporationsTree_sysCorporation' => 'restApiDefaultCall',                                    
+                                    'pkUpdateMakeActiveOrPassive_sysCorporation' => 'restApiDefaultCall', 
+         //**---- SysCorporation -------------------
+         //** SysSubjects ----------------------
+                                    'pkDelete_sysSubjects' => 'restApiDefaultCall',                                    
+                                    'pkInsert_sysSubjects' => 'restApiDefaultCall',
+                                    'pkUpdate_sysSubjects' => 'restApiDefaultCall',                                    
+                                    'fillSubjectsTree_sysSubjects' => 'restApiDefaultCall',                                    
+                                    'pkUpdateMakeActiveOrPassive_sysSubjects' => 'restApiDefaultCall', 
+                                    'fillBaseTree_sysSubjects' => 'restApiDefaultCall',
+        
+        
+         //**---- SysSubjects -------------------
+         //** SysLaws ----------------------
+                                    'pkDelete_sysLaws' => 'restApiDefaultCall',                                    
+                                    'pkInsert_sysLaws' => 'restApiDefaultCall',
+                                    'pkUpdate_sysLaws' => 'restApiDefaultCall',                                    
+                                    'fillLawsTree_sysLaws' => 'restApiDefaultCall',                                    
+                                    'pkUpdateMakeActiveOrPassive_sysLaws' => 'restApiDefaultCall', 
+         //**---- SysLaws -------------------
+         
+        //** InfoExams ----------------------
+                                    'pkDelete_infoExams' => 'restApiDefaultCall',                                    
+                                    'pkInsert_infoExams' => 'restApiDefaultCall',
+                                    'pkUpdate_infoExams' => 'restApiDefaultCall',                                    
+                                    'fillExamsTree_infoExams' => 'restApiDefaultCall',                                    
+                                    'pkUpdateMakeActiveOrPassive_infoExams' => 'restApiDefaultCall', 
+                                    'fillAllExamLists_infoExams' => 'restApiDefaultCall',
+                                    'pkFillCorporationOfExam_infoExams' => 'restApiDefaultCall', 
+                                    'pkFillNotInCorporationOfExam_infoExams' => 'restApiDefaultCall',
+                                    'pkFillExamsTree_infoExams' => 'restApiDefaultCall',
+        
+         //**---- InfoExams -------------------
+        //** InfoQuestions ----------------------
+                                    'pkDelete_infoQuestions' => 'restApiDefaultCall',                                    
+                                    'pkInsert_infoQuestions' => 'restApiDefaultCall',
+                                    'pkInsertPassive_infoQuestions' => 'restApiDefaultCall',
+        
+                                    'pkUpdate_infoQuestions' => 'restApiDefaultCall', 
+                                    'pkUpdateMakeActiveOrPassive_infoQuestions' => 'restApiDefaultCall', 
+                                    'fillAllQuestionLists_infoQuestions' => 'restApiDefaultCall',  
+                                    'pkFillAllQuestionLists_infoQuestions' => 'restApiDefaultCall',  
+                                    'fillBaseOfQuestion_infoQuestions' => 'restApiDefaultCall',  
+                                    'pkFillQuestionInfo_infoQuestions' => 'restApiDefaultCall',
+         
+         //**---- InfoQuestions -------------------
+        //** InfoQuestionsSubjects ----------------------
+                                    'pkDelete_infoQuestionsSubjects' => 'restApiDefaultCall',                                    
+                                    'pkInsert_infoQuestionsSubjects' => 'restApiDefaultCall',
+                                    'pkUpdate_infoQuestionsSubjects' => 'restApiDefaultCall', 
+                                    'pkUpdateMakeActiveOrPassive_infoQuestionsSubjects' => 'restApiDefaultCall', 
+                                    'fillSubjectOfQuestion_infoQuestionsSubjects' => 'restApiDefaultCall',  
+                                    'pkTransferSubjectOfQuestion_infoQuestionsSubjects' => 'restApiDefaultCall',  
+                                    'pkDeleteAction_infoQuestionsSubjects' => 'restApiDefaultCall', 
+        
+         //**---- InfoQuestionsSubjects -------------------
+        //** InfoQuestionAnswers ----------------------
+                                    'pkDelete_infoQuestionAnswers' => 'restApiDefaultCall',                                    
+                                    'pkInsert_infoQuestionAnswers' => 'restApiDefaultCall',
+                                    'pkUpdate_infoQuestionAnswers' => 'restApiDefaultCall', 
+                                    'pkUpdateMakeActiveOrPassive_infoQuestionAnswers' => 'restApiDefaultCall', 
+                                    'fillAnswerOfQuestionTree_infoQuestionAnswers' => 'restApiDefaultCall',  
+                                    'pkUpdateCorrect_infoQuestionAnswers' => 'restApiDefaultCall',  
+        
+         //**---- InfoQuestionAnswers -------------------
+          //** InfoExamQuestion ----------------------
+                                    'pkDelete_infoExamQuestion' => 'restApiDefaultCall',                                    
+                                    'pkInsert_infoExamQuestion' => 'restApiDefaultCall',
+                                    'pkUpdate_infoExamQuestion' => 'restApiDefaultCall', 
+                                    'pkUpdateMakeActiveOrPassive_infoExamQuestion' => 'restApiDefaultCall', 
+                                    'fillQuestionOfExamTree_infoExamQuestion' => 'restApiDefaultCall',  
+                                    'pkFillNotInQuestionOfExamLists_infoExamQuestion' => 'restApiDefaultCall',  
+                                    'pkFillQuestionOfExamLists_infoExamQuestion' => 'restApiDefaultCall',
+                                    'pkFillFullQuestionOfExamLists_infoExamQuestion' => 'restApiDefaultCall',
+        
+        
+         //**---- InfoExamQuestion -------------------
+          //** InfoExamSubjects ----------------------
+                                    'pkDelete_infoExamSubjects' => 'restApiDefaultCall',                                    
+                                    'pkInsert_infoExamSubjects' => 'restApiDefaultCall',
+                                    'pkUpdate_infoExamSubjects' => 'restApiDefaultCall', 
+                                    'pkUpdateMakeActiveOrPassive_infoExamSubjects' => 'restApiDefaultCall', 
+                                    'fillSubjectOfExam_infoExamSubjects' => 'restApiDefaultCall',  
+                                    'fillNotInSubjectOfExam_infoExamSubjects' => 'restApiDefaultCall',  
+                                    'pkTransferSubjectOfExam_infoExamSubjects' => 'restApiDefaultCall',  
+                                    'pkDeleteAction_infoExamSubjects' => 'restApiDefaultCall', 
+         //**---- InfoExamSubjects -------------------
+        //** InfoQuestionSources ----------------------
+                                    'pkDelete_infoQuestionSources' => 'restApiDefaultCall',                                    
+                                    'pkInsert_infoQuestionSources' => 'restApiDefaultCall',
+                                    'pkUpdate_infoQuestionSources' => 'restApiDefaultCall', 
+                                    'pkUpdateMakeActiveOrPassive_infoQuestionSources' => 'restApiDefaultCall', 
+                                    'fillSourceOfQuestionTree_infoQuestionSources' => 'restApiDefaultCall',  
+                                    'fillSourceOfQuestion_infoQuestionSources' => 'restApiDefaultCall',  
+
+        
+         //**---- InfoQuestionSources -------------------
+        
+        
+        
+        //** SysParams ----------------------
+                                    'pkDelete_sysParams' => 'restApiDefaultCall',                                    
+                                    'pkInsert_sysParams' => 'restApiDefaultCall',
+                                    'pkUpdate_sysParams' => 'restApiDefaultCall', 
+                                    'pkUpdateMakeActiveOrPassive_sysParams' => 'restApiDefaultCall', 
+                                    'fillSysParams_sysParams' => 'restApiDefaultCall',  
+                                     
+         //**---- SysParams -------------------
+        
+        
+        
+        
+        
     );
 
     /**
@@ -571,6 +707,7 @@ class SlimHmacProxy extends \Proxy\Proxy {
      * constructor 
      */
     public function __construct() {
+        
         parent::__construct();
         $this->hmacObj = new \Hmac\Hmac();
         $this->dalObject = new \Dal\Dal();
@@ -580,7 +717,7 @@ class SlimHmacProxy extends \Proxy\Proxy {
      * redirect to the service endpoint
      */
     public function redirect() {
-        try {
+        try { 
             $execFunction = $this->resolveRedirectMap();
             $this->setEndPointByClosure();
             echo $this->$execFunction();
@@ -595,7 +732,7 @@ class SlimHmacProxy extends \Proxy\Proxy {
       * @author Okan CIRAN
       * @since version 0.3
       */
-     public function servicePkRequired() {
+     public function servicePkRequired() { 
          if($this->isServicePkRequired == null) {
              $params = $this->getRequestParams();
              if(substr(trim($params['url']),0,2) == 'pk' && 
@@ -617,8 +754,8 @@ class SlimHmacProxy extends \Proxy\Proxy {
      * @version 0.2
      * @todo conside check if request is ssl encypted (https)
      */
-    public function restApiDefaultCall() {
-
+    public function restApiDefaultCall() { 
+    
         /* $encrypt = new \vendor\Encrypt\EncryptManual('test');
           $encryptValue = $encrypt->encrypt_times(4, 'kullanici:sifre');
           //print_r('--'.$encryptValue.'--');
@@ -630,7 +767,7 @@ class SlimHmacProxy extends \Proxy\Proxy {
         $this->setEncryptClass();
         $params = null;
         $params = $this->getRequestParams();
-        
+  
         /**
          * controlling public key if public key is necessary for this service and
          * public key not found forwarder is in effect then making forward
@@ -656,12 +793,14 @@ class SlimHmacProxy extends \Proxy\Proxy {
          * getting public key if user registered    
          * @author Okan CIRAN
          * @since 06/01/2016 version 0.3
-         */
+         */ 
         if(isset($params['pk']) &&  $this->isServicePkRequired) {
             $resultSet = $this->dalObject->pkIsThere(array('pk' => $params['pk']));
-            if(!isset($resultSet['resultSet'][0]['?column?'])) $this->userNotRegisteredRedirect ();
+        //   print_r($resultSet);
+            
+            if(!isset($resultSet['resultSet'][0]['kontrol'])) $this->userNotRegisteredRedirect ();
         }
-        
+   
         /**
          * company public  key processes wrapper
          * @author Okan CIRAN
@@ -750,9 +889,11 @@ class SlimHmacProxy extends \Proxy\Proxy {
      */
     protected function setCurlHeaderForInsertUpdateDelete() {
         
-        $logArray = array();
-        if($this->isInsertOperationLogged) {
+       $logArray = array();
+        if($this->isInsertOperationLogged) { 
             $logArray[] = 'X-InsertOperationLogged : true';
+           // $logArray[] = 'X-IP: ' . $ip['ip'] . '';
+          //  $logArray[] = 'X-IP: '. $this->hmacObj->getRealIp() . '';
             //print_r('--isServicePkRequired--');
             /*curl_setopt($chLocal, CURLOPT_HTTPHEADER, array(
                 'X-Public: ' . $this->hmacObj->getPublicKey() . '',
@@ -771,6 +912,11 @@ class SlimHmacProxy extends \Proxy\Proxy {
         if($this->isUpdateOperationLogged) {
             $logArray[] = 'X-UpdateOperationLogged : true';
         }
+          
+       /* if($this->isServicePkRequired == false) {
+        $logArray[] = 'X-IP: '. $this->hmacObj->getRealIp() . '';
+        }
+        */
         return $logArray;
     }
     
@@ -789,6 +935,7 @@ class SlimHmacProxy extends \Proxy\Proxy {
          * @author Okan CIRAN
          * @since version 0.3 06/01/2016
          */
+        $logArray[] = 'X-IP: '. $this->hmacObj->getRealIp() . '';
         if($this->isServicePkRequired) {
             //print_r('--isServicePkRequired--');
             $logArray[] = 'X-Public: ' . $this->hmacObj->getPublicKey() . '';
@@ -796,6 +943,7 @@ class SlimHmacProxy extends \Proxy\Proxy {
             $logArray[] = 'X-Nonce:' . $this->hmacObj->getNonce();
             $logArray[] = 'X-TimeStamp:' . $this->hmacObj->setTimeStamp($this->encryptClass
                                                          ->encrypt('' . time() . ''));
+          //  $logArray[] = 'X-IP: '. $this->hmacObj->getRealIp() . '';
             /*curl_setopt($chLocal, CURLOPT_HTTPHEADER, array(
                 'X-Public: ' . $this->hmacObj->getPublicKey() . '',
                 'X-Hash: ' . $this->hmacObj->getHash() . '',
@@ -824,12 +972,14 @@ class SlimHmacProxy extends \Proxy\Proxy {
          * @since version 0.3 27/01/2016
          * @todo after detailed test curl obj will be removed
          */
+        //     $logArray[] = 'X-IP: '. $this->hmacObj->getRealIp() . '';
         if($this->isServicePkTempRequired) {
             $logArray[] = 'X-Public-Temp: ' . $this->hmacObj->getPublicKey() . '';
             $logArray[] = 'X-Hash-Temp: ' . $this->hmacObj->getHash() . '';
             $logArray[] = 'X-Nonce:' . $this->hmacObj->getNonce();
             $logArray[] = 'X-TimeStamp:' . $this->hmacObj->setTimeStamp($this->encryptClass
                                                          ->encrypt('' . time() . ''));
+            //$logArray[] = 'X-IP: '. $this->hmacObj->getRealIp() . '';
             
             /*curl_setopt($ch, CURLOPT_HTTPHEADER, array(
                 'X-Public-Temp: ' . $this->hmacObj->getPublicKey() . '',
@@ -851,6 +1001,7 @@ class SlimHmacProxy extends \Proxy\Proxy {
      * @throws Exception
      */
     private function publicKeyTempProcessControler($params) {
+       // $this->hmacObj->setRealIp(); 
         if($this->isServicePkTempRequired) {
             /**
             * getting private key temp due to public key temp
@@ -876,11 +1027,12 @@ class SlimHmacProxy extends \Proxy\Proxy {
             if(!isset($params['pktemp'])) {
                 throw new \Exception ('SlimHmacProxy->restApiDefaultCall() method public temp key not found!!');
             } else {
-                $this->hmacObj->setPublicKey($params['pktemp']);
+                $this->hmacObj->setPublicKey($params['pktemp']); 
             }
-
+            
             //$this->hmacObj->setPrivateKey('e249c439ed7697df2a4b045d97d4b9b7e1854c3ff8dd668c779013653913572e');
             $this->hmacObj->setPrivateKey($resultSetTemp['resultSet'][0]['sf_private_key_value_temp']);
+            
             $this->hmacObj->setRequestParams($this->getRequestParamsWithoutPublicKeyTemp());
             $this->hmacObj->makeHmac();
             //print_r($this->hmacObj);
@@ -900,8 +1052,9 @@ class SlimHmacProxy extends \Proxy\Proxy {
      * @author Okan CIRAN
      * @since 0.3 27/01/2016
      */
-    private function publicKeyProcessControler($params) {
+    private function publicKeyProcessControler($params) { 
         $resultSet;
+        $this->hmacObj->setRealIp(); 
         if($this->isServicePkRequired) {
             /**
             * getting private key due to public key
@@ -932,7 +1085,7 @@ class SlimHmacProxy extends \Proxy\Proxy {
             } else {
                 $this->hmacObj->setPublicKey($params['pk']);
             }
-
+            
             //$this->hmacObj->setPrivateKey('e249c439ed7697df2a4b045d97d4b9b7e1854c3ff8dd668c779013653913572e');
             $this->hmacObj->setPrivateKey($resultSet['resultSet'][0]['sf_private_key_value']);
             $this->hmacObj->setRequestParams($this->getRequestParamsWithoutPublicKey());
@@ -955,7 +1108,7 @@ class SlimHmacProxy extends \Proxy\Proxy {
      * @since 0.4 09/06/2016
      */
     private function publicCompanyKeyProcessControler($params) {
-        $resultSet;
+        $resultSet; 
         if($this->isServiceCpkRequired) {
             /**
             * getting private key due to public key
@@ -981,7 +1134,8 @@ class SlimHmacProxy extends \Proxy\Proxy {
     }
     
 
-    public function setEndPointByClosure(Array $EndPointClosure = null) {       
+    public function setEndPointByClosure(Array $EndPointClosure = null) {  
+       
         $endPointFunction = $this->getRestApiEndPointFunction();
         if (substr($endPointFunction, -5) == '_test') {
             //$this->setEndPointUrl("http://localhost/slim2_test/index.php/");
@@ -1194,8 +1348,55 @@ class SlimHmacProxy extends \Proxy\Proxy {
             $this->setRestApiEndPoint('syssectors.php/');
             //    print_r($this->restApiBaseUrl.$this->restApiEndPoint.$this->restApiEndPointFunction);
             $this->setRestApiFullPathUrl($this->restApiBaseUrl . $this->restApiEndPoint . $this->restApiEndPointFunction);
-        }   
-         
+        }   else if (substr($endPointFunction, -15) == '_sysCorporation') {
+            $this->setRestApiEndPoint('syscorporation.php/');
+            //    print_r($this->restApiBaseUrl.$this->restApiEndPoint.$this->restApiEndPointFunction);
+            $this->setRestApiFullPathUrl($this->restApiBaseUrl . $this->restApiEndPoint . $this->restApiEndPointFunction);
+        }   else if (substr($endPointFunction, -12) == '_sysSubjects') {
+            $this->setRestApiEndPoint('syssubjects.php/');
+            //    print_r($this->restApiBaseUrl.$this->restApiEndPoint.$this->restApiEndPointFunction);
+            $this->setRestApiFullPathUrl($this->restApiBaseUrl . $this->restApiEndPoint . $this->restApiEndPointFunction);
+        }   else if (substr($endPointFunction, -8) == '_sysLaws') {
+            $this->setRestApiEndPoint('syslaws.php/');
+            //    print_r($this->restApiBaseUrl.$this->restApiEndPoint.$this->restApiEndPointFunction);
+            $this->setRestApiFullPathUrl($this->restApiBaseUrl . $this->restApiEndPoint . $this->restApiEndPointFunction);
+        }   else if (substr($endPointFunction, -10) == '_infoExams') {
+            $this->setRestApiEndPoint('infoexams.php/');
+            //    print_r($this->restApiBaseUrl.$this->restApiEndPoint.$this->restApiEndPointFunction);
+            $this->setRestApiFullPathUrl($this->restApiBaseUrl . $this->restApiEndPoint . $this->restApiEndPointFunction);
+        }   else if (substr($endPointFunction, -14) == '_infoQuestions') {
+            $this->setRestApiEndPoint('infoquestions.php/');
+            //    print_r($this->restApiBaseUrl.$this->restApiEndPoint.$this->restApiEndPointFunction);
+            $this->setRestApiFullPathUrl($this->restApiBaseUrl . $this->restApiEndPoint . $this->restApiEndPointFunction);
+        }   else if (substr($endPointFunction, -22) == '_infoQuestionsSubjects') {
+            $this->setRestApiEndPoint('infoquestionssubjects.php/');
+            //    print_r($this->restApiBaseUrl.$this->restApiEndPoint.$this->restApiEndPointFunction);
+            $this->setRestApiFullPathUrl($this->restApiBaseUrl . $this->restApiEndPoint . $this->restApiEndPointFunction);
+        }   else if (substr($endPointFunction, -20) == '_infoQuestionAnswers') {
+            $this->setRestApiEndPoint('infoquestionanswers.php/');
+            //    print_r($this->restApiBaseUrl.$this->restApiEndPoint.$this->restApiEndPointFunction);
+            $this->setRestApiFullPathUrl($this->restApiBaseUrl . $this->restApiEndPoint . $this->restApiEndPointFunction);
+        }   else if (substr($endPointFunction, -17) == '_infoExamQuestion') {
+            $this->setRestApiEndPoint('infoexamquestion.php/');
+            //    print_r($this->restApiBaseUrl.$this->restApiEndPoint.$this->restApiEndPointFunction);
+            $this->setRestApiFullPathUrl($this->restApiBaseUrl . $this->restApiEndPoint . $this->restApiEndPointFunction);
+        }   else if (substr($endPointFunction, -17) == '_infoExamSubjects') {
+            $this->setRestApiEndPoint('infoexamsubjects.php/');
+            //    print_r($this->restApiBaseUrl.$this->restApiEndPoint.$this->restApiEndPointFunction);
+            $this->setRestApiFullPathUrl($this->restApiBaseUrl . $this->restApiEndPoint . $this->restApiEndPointFunction);
+        }   else if (substr($endPointFunction, -20) == '_infoQuestionSources') {
+            $this->setRestApiEndPoint('infoquestionsources.php/');
+            //    print_r($this->restApiBaseUrl.$this->restApiEndPoint.$this->restApiEndPointFunction);
+            $this->setRestApiFullPathUrl($this->restApiBaseUrl . $this->restApiEndPoint . $this->restApiEndPointFunction);
+        }  else if (substr($endPointFunction, -10) == '_sysParams') {
+            $this->setRestApiEndPoint('sysparams.php/');
+            //    print_r($this->restApiBaseUrl.$this->restApiEndPoint.$this->restApiEndPointFunction);
+            $this->setRestApiFullPathUrl($this->restApiBaseUrl . $this->restApiEndPoint . $this->restApiEndPointFunction);
+        } else if (substr($endPointFunction, -11) == '_InfoDuyuru') {
+            $this->setRestApiEndPoint('infoduyuru.php/');
+            //    print_r($this->restApiBaseUrl.$this->restApiEndPoint.$this->restApiEndPointFunction);
+            $this->setRestApiFullPathUrl($this->restApiBaseUrl . $this->restApiEndPoint . $this->restApiEndPointFunction);
+        }  
     }
 
     
@@ -1217,7 +1418,7 @@ class SlimHmacProxy extends \Proxy\Proxy {
      * @version 0.2
      * @author Okan CIRAN
      */
-    public function getHmacObj() {
+    public function getHmacObj() { 
         return $this->hmacObj;
     }
 

@@ -15,6 +15,8 @@ class Hmac {
     
     protected $publicKey;
     
+     protected $RealIp;
+    
     protected $privateKey;
     
     protected $requestParams = array();
@@ -118,6 +120,24 @@ class Hmac {
     
     public function getPublicKey() {
         return $this->publicKey;
+    }
+    
+    public function setRealIp($RealIp = null) { 
+        if($RealIp == null) {
+            $ip =  (array(
+                    'ip' =>  \Utill\Env\serverVariables::getClientIpImp()  
+                    ));
+            echo($ip['ip']);  
+            $this->RealIp = $ip['ip'];
+        } else {
+            $this->RealIp = $RealIp;
+        }  
+        return $this->RealIp;
+         
+    } 
+    
+    public function getRealIp() {
+        return $this->RealIp;
     }
     
     public function setPrivateKey($privateKey = null) {

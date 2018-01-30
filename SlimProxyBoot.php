@@ -1,10 +1,10 @@
 <?php
 /**
- * ECOMAN Rest Api Proxy Library
+ *  
  *
- * @link      https://github.com/Leadera/ecoman_slim/tree/ecoman_proxy for the canonical source repository
- * @copyright Copyright (c) 2014 - 2015 
- * @license   https://github.com/Leadera/ecoman_slim/blob/slim2/LICENSE
+ * @link     
+ * @copyright Copyright (c) 2017
+ * @license    
  * @author Okan CIRAN
  * @version 0.0.1
  */
@@ -17,6 +17,7 @@
  * @since 2.10.2015
  */
 // Allow from any origin
+  
 if (isset($_SERVER['HTTP_ORIGIN'])) {
     header("Access-Control-Allow-Origin: {$_SERVER['HTTP_ORIGIN']}");
     header('Access-Control-Allow-Credentials: true');
@@ -60,11 +61,20 @@ $proxyClass = new \Slim\SlimHmacProxy();
  * bazı browser larda crossdomain hataları oluştuğu için yapısal değişiklik yapıldı.  
  * @since 23.12.2015
  * @author Okan CIRAN
- * 
+ *  
  */ 
-  $proxyClass->setRestApiBaseUrl("http://slim.devamsizlik.com:9990/");
+  //$proxyClass->setRestApiBaseUrl("http://slim.trf.com:9990/");
   //$proxyClass->setRestApiBaseUrl("http://sanalfabrika.slim.com:9990/");
 //$proxyClass->setRestApiBaseUrl("https://slim.uretimosb.com/");
+ // $proxyClass->setRestApiBaseUrl("http://slim.sorubankasi.com/");
+  $proxyClass->setRestApiBaseUrl("http://slim.devamsizlik.com:9990/"); 
+   
+
 $proxyClass->setRestApiEndPoint("index.php/");
- 
-echo $proxyClass->redirect();
+//$proxyClass->setEndPointUrl('http://88.249.18.205:8090/slim2_ecoman/index.php/');
+//$ecoman->setEndPointUrl('http://88.249.18.205:8090/slim2_ecoman/index.php/');
+  // print_r($proxyClass->redirect());
+ //  print_r($proxyClass);
+
+    
+ echo $proxyClass->redirect();
