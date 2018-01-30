@@ -127,7 +127,7 @@ class Hmac {
             $ip =  (array(
                     'ip' =>  \Utill\Env\serverVariables::getClientIpImp()  
                     ));
-            echo($ip['ip']);  
+        //    echo($ip['ip']);  
             $this->RealIp = $ip['ip'];
         } else {
             $this->RealIp = $RealIp;
