@@ -22,9 +22,9 @@ class Dal {
      */
     private function getPdo() {
         try {
-            $pdo = new \PDO('pgsql:dbname=sorubankasi;host=185.86.4.73;',
+            $pdo = new \PDO('pgsql:dbname=sorubankasi;host=localhost;',
                             'postgres', 
-                            '1Qaaal123');
+                            '1!qaaal123.');
             return $pdo;
         } catch (PDOException $e) {
             return false; 
