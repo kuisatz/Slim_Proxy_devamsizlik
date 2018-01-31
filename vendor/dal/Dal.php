@@ -51,8 +51,7 @@ class Dal {
         $pdo = new \PDO("sqlsrv:Server=localhost;Database=BILSANET_DEVAMSIZLIK", 
                "sa", 
                "12345678Oki."
-               );
-            
+               ); 
             
             return $pdo;
         } catch (PDOException $e) {
@@ -71,10 +70,8 @@ class Dal {
     public function isUserBelongToCompany($userPublicKey, $companyPublicKey) {
         try {
             $resultSet = $this->getPrivateKey($userPublicKey);
-            //print_r($resultSet);
-            
-            $pdo = $this->getPdo();
-            
+            //print_r($resultSet); 
+            $pdo = $this->getPdo(); 
             $sql = "              
                     SELECT firm_id AS firm_id, 1=1 AS control FROM (
                             SELECT a.firm_id ,
@@ -85,19 +82,16 @@ class Dal {
                 ) AS xtable WHERE cpk = TRUE  limit 1
                     "; 
             
-           // print_r($sql);
-            
+           // print_r($sql); 
             $statement = $pdo->prepare($sql);  
             $statement->execute();
             $result = $statement->fetchAll(\PDO::FETCH_ASSOC);
-           // print_r($result);
-
+           // print_r($result); 
             $errorInfo = $statement->errorInfo();
             if ($errorInfo[0] != "00000" && $errorInfo[1] != NULL && $errorInfo[2] != NULL)
                 throw new \PDOException($errorInfo[0]);
             return array("found" => true, "errorInfo" => $errorInfo, "resultSet" => $result);
-        } catch (\PDOException $e /* Exception $e */) {
-            $pdo->rollback();
+        } catch (\PDOException $e /* Exception $e */) { 
             return array("found" => false, "errorInfo" => $e->getMessage());
         }
     }

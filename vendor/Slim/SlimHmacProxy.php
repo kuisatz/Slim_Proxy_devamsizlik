@@ -120,7 +120,10 @@ class SlimHmacProxy extends \Proxy\Proxy {
                                     'getPK_blLoginLogout' => 'restApiDefaultCall',  
                                     'pkSessionControl_blLoginLogout' => 'restApiDefaultCall',   
                                     'pkIsThere_blLoginLogout' => 'restApiDefaultCall',
-                                    'pkAllPkGeneratedFromPrivate_blLoginLogout' => 'restApiDefaultCall',  
+                                    'pkAllPkGeneratedFromPrivate_blLoginLogout' => 'restApiDefaultCall', 
+                                    'pkLogOut_blLoginLogout' => 'restApiDefaultCall',
+        
+        
          //**---- blLoginLogout -------------------   
          //** sysAclRoles ----------------------
                                     'pkDelete_sysAclRoles' => 'restApiDefaultCall',
