@@ -22,7 +22,7 @@ class Dal {
      */
     private function getPdo() {
         try {
-            $pdo = new \PDO('pgsql:dbname=sorubankasi;host=localhost;port:5433',
+            $pdo = new \PDO('pgsql:dbname=sorubankasi;host=localhost;port=5433;',
                             'postgres', 
                             '1!qaaal123.');
             return $pdo;
@@ -128,7 +128,8 @@ class Dal {
             
            // print_r($result [0]['sf_private_key_value']) ; 
           
-
+             //  print_r($sql);
+           //  if (\Utill\Dal\Helper::haveRecord($result)) {  }
             $sfprivatekeyvalue =  'x';
             $oid = 'x'; 
             $usid = -1; 
@@ -144,7 +145,8 @@ class Dal {
                 throw new \PDOException($errorInfo[0]);
          //   return array("found" => true, "errorInfo" => $errorInfo, "resultSet" => $result);
             
-             
+            //  print_r($sql);
+           //  if (\Utill\Dal\Helper::haveRecord($result)) {  }
             
             $pdo = $this->getPdo();
             
@@ -159,9 +161,7 @@ class Dal {
                     "; 
             
            //  print_r($sql);
-           //  if (\Utill\Dal\Helper::haveRecord($result)) {
-        
-         //   }
+           //  if (\Utill\Dal\Helper::haveRecord($result)) {  }
             $statement = $pdo->prepare($sql);  
             $statement->execute();
             $result = $statement->fetchAll(\PDO::FETCH_ASSOC);
