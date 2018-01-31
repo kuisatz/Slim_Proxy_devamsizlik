@@ -21,7 +21,17 @@ class SlimHmacProxy extends \Proxy\Proxy {
                                     'getDynamicForm_test' => 'restApiDefaultCall',
 
         
-     
+      //** SysOkulTur ----------------------
+                                    'pkDelete_sysokultur' => 'restApiDefaultCall', 
+                                    'pkInsert_sysokultur' => 'restApiDefaultCall',
+                                    'pkUpdate_sysokultur' => 'restApiDefaultCall',
+                                    'pkUpdateMakeActiveOrPassive_sysokultur' => 'restApiDefaultCall',
+                                      
+                                    'FillOkulTurleriCmb_sysokultur' => 'restApiDefaultCall',
+                                    'pkFillOkulTurleri_sysokultur' => 'restApiDefaultCall',
+                                    
+                                   
+        //**---- SysOkulTur -------------------        
         
         
         
@@ -1397,6 +1407,10 @@ class SlimHmacProxy extends \Proxy\Proxy {
             $this->setRestApiFullPathUrl($this->restApiBaseUrl . $this->restApiEndPoint . $this->restApiEndPointFunction);
         } else if (substr($endPointFunction, -11) == '_InfoDuyuru') {
             $this->setRestApiEndPoint('infoduyuru.php/');
+            //    print_r($this->restApiBaseUrl.$this->restApiEndPoint.$this->restApiEndPointFunction);
+            $this->setRestApiFullPathUrl($this->restApiBaseUrl . $this->restApiEndPoint . $this->restApiEndPointFunction);
+        } else if (substr($endPointFunction, -11) == '_sysokultur') {
+            $this->setRestApiEndPoint('sysokultur.php/');
             //    print_r($this->restApiBaseUrl.$this->restApiEndPoint.$this->restApiEndPointFunction);
             $this->setRestApiFullPathUrl($this->restApiBaseUrl . $this->restApiEndPoint . $this->restApiEndPointFunction);
         }  
