@@ -22,7 +22,7 @@ class Dal {
      */
     private function getPdo() {
         try {
-            $pdo = new \PDO('pgsql:dbname=sorubankasi;host=localhost;',
+            $pdo = new \PDO('pgsql:dbname=sorubankasi;host=localhost;port:5433',
                             'postgres', 
                             '1!qaaal123.');
             return $pdo;
@@ -48,7 +48,7 @@ class Dal {
                             "12345678oki"
                             );
             */
-        $pdo = new \PDO("sqlsrv:Server=localhost;Database=BILSANET_DEVAMSIZLIK", 
+        $pdo = new \PDO("sqlsrv:Server=.;Database=BILSANET_DEVAMSIZLIK", 
                "sa", 
                "12345678Oki."
                ); 
