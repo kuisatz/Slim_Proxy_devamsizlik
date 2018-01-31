@@ -1066,6 +1066,11 @@ class SlimHmacProxy extends \Proxy\Proxy {
             */
            if(isset($params['pk'])) $resultSet = $this->dalObject->getPrivateKey($params['pk']);
 
+           /*print_r( "<<<<<<<<<<");
+			print_r($resultSet  );
+			print_r( ">>>>>>>>>>>>");
+			if (\Utill\Dal\Helper::haveRecord($result)) {     }*/
+           /**
            /**
             * if not get private key due to public key
             * forward to private not found
