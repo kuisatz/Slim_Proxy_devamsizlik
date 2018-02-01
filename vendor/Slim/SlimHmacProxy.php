@@ -45,6 +45,18 @@ class SlimHmacProxy extends \Proxy\Proxy {
                                    
         //**---- SysOgretmenBransTipleri -------------------        
         
+         
+        //** SysOgretmenTipleri ----------------------
+                                    'pkDelete_sysogretmentipleri' => 'restApiDefaultCall', 
+                                    'pkInsert_sysogretmentipleri' => 'restApiDefaultCall',
+                                    'pkUpdate_sysogretmentipleri' => 'restApiDefaultCall',
+                                    'pkUpdateMakeActiveOrPassive_sysogretmentipleri' => 'restApiDefaultCall',
+                                      
+                                    'FillOgretmenTipleriCmb_sysogretmentipleri' => 'restApiDefaultCall',
+                                    'pkFillOgretmenTipleri_sysogretmentipleri' => 'restApiDefaultCall',
+                                    
+                                   
+        //**---- SysOgretmenTipleri -------------------       
         
         //** leftnavigation ----------------------
                                     'pkDelete_leftnavigation' => 'restApiDefaultCall',
@@ -1168,6 +1180,10 @@ class SlimHmacProxy extends \Proxy\Proxy {
         switch ($endPoint) {
             case "_test":
                 echo "_test!";
+                break;
+            
+            case "_sysogretmentipleri":
+                $this->setRestApiEndPoint('sysogretmentipleri.php/');
                 break;
             case "_blLoginLogout":
                 $this->setRestApiEndPoint('blLoginLogout.php/');
