@@ -1169,6 +1169,18 @@ class SlimHmacProxy extends \Proxy\Proxy {
             case "_test":
                 echo "_test!";
                 break;
+            case "_blLoginLogout":
+                $this->setRestApiEndPoint('blLoginLogout.php/');
+                break;
+            case "_sysokultur":
+                $this->setRestApiEndPoint('sysokultur.php/');
+                break;
+            case "_sysogretmenbranstipleri":
+                $this->setRestApiEndPoint('sysogretmenbranstipleri.php/');
+                break;
+            case "_infoUsersVerbal":
+                $this->setRestApiEndPoint('infousersverbal.php/');
+                break;
             case "_leftnavigation":
                 $this->setRestApiEndPoint('leftnavigation.php/');
                 break;
@@ -1189,10 +1201,7 @@ class SlimHmacProxy extends \Proxy\Proxy {
                 break;
             case "_sysvillage":
                 $this->setRestApiEndPoint('sysvillage.php/');
-                break;
-            case "_blLoginLogout":
-                $this->setRestApiEndPoint('blLoginLogout.php/');
-                break;
+                break; 
             case "_sysAclRoles":
                 $this->setRestApiEndPoint('sysaclroles.php/');
                 break;
@@ -1261,10 +1270,7 @@ class SlimHmacProxy extends \Proxy\Proxy {
                 break;
             case "_sysClusters":
                 $this->setRestApiEndPoint('sysclusters.php/');
-                break;
-            case "_infoUsersVerbal":
-                $this->setRestApiEndPoint('infousersverbal.php/');
-                break;
+                break; 
             case "_infoUsersProductsServices":
                 $this->setRestApiEndPoint('infousersproductsservices.php/');
                 break;
@@ -1337,12 +1343,7 @@ class SlimHmacProxy extends \Proxy\Proxy {
             case "_InfoDuyuru":
                 $this->setRestApiEndPoint('infoduyuru.php/');
                 break;
-            case "_sysokultur":
-                $this->setRestApiEndPoint('sysokultur.php/');
-                break;
-            case "_sysogretmenbranstipleri":
-                $this->setRestApiEndPoint('sysogretmenbranstipleri.php/');
-                break;
+           
 
             default:
                 echo "EndPoint Bulunamadı ...... ";
