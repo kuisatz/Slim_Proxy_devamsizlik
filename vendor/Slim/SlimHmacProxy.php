@@ -39,8 +39,8 @@ class SlimHmacProxy extends \Proxy\Proxy {
                                     'pkUpdate_sysogretmenbranstipleri' => 'restApiDefaultCall',
                                     'pkUpdateMakeActiveOrPassive_sysogretmenbranstipleri' => 'restApiDefaultCall',
                                       
-                                    'FillOkulTurleriCmb_sysogretmenbranstipleri' => 'restApiDefaultCall',
-                                    'pkFillOkulTurleri_sysogretmenbranstipleri' => 'restApiDefaultCall',
+                                    'FillOgretmenBransTipleriCmb_sysogretmenbranstipleri' => 'restApiDefaultCall',
+                                    'pkFillOgretmenBransTipleri_sysogretmenbranstipleri' => 'restApiDefaultCall',
                                     
                                    
         //**---- SysOgretmenBransTipleri -------------------        
