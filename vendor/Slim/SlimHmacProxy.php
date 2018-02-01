@@ -1158,20 +1158,13 @@ class SlimHmacProxy extends \Proxy\Proxy {
     }
     
 
-    public function setEndPointByClosure(Array $EndPointClosure = null) {  
-       
+    public function setEndPointByClosure(Array $EndPointClosure = null) {
         $endPointFunction = $this->getRestApiEndPointFunction();
-        
-       
-        $endPointFunctionLen = strlen($endPointFunction); 
+        $endPointFunctionLen = strlen($endPointFunction);
         $endPointFunctionPos = strrpos($endPointFunction, "_");
-        $endPointFunctionStart =$endPointFunctionLen -$endPointFunctionPos; 
-                
-        $endPoint =  substr($endPointFunction, - $endPointFunctionStart);
-      //  print_r($endPoint);
-        
-            
-
+        $endPointFunctionStart = $endPointFunctionLen - $endPointFunctionPos;
+        $endPoint = substr($endPointFunction, - $endPointFunctionStart);
+        //  print_r($endPoint); 
         switch ($endPoint) {
             case "_test":
                 echo "_test!";
@@ -1350,260 +1343,255 @@ class SlimHmacProxy extends \Proxy\Proxy {
             case "_sysogretmenbranstipleri":
                 $this->setRestApiEndPoint('sysogretmenbranstipleri.php/');
                 break;
-            
+
             default:
                 echo "EndPoint Bulunamadı ...... ";
         }
 
-          //    print_r($this->restApiBaseUrl.$this->restApiEndPoint.$this->restApiEndPointFunction);
-            $this->setRestApiFullPathUrl($this->restApiBaseUrl . $this->restApiEndPoint . $this->restApiEndPointFunction);
-            
-        
-        /*
-        if (substr($endPointFunction, -5) == '_test') {
-            //$this->setEndPointUrl("http://localhost/slim2_test/index.php/");
-            $this->setRestApiFullPathUrl($this->restApiBaseUrl . $this->restApiEndPoint . $this->restApiEndPointFunction);
-        } else if (substr($endPointFunction, -15) == '_leftnavigation') {
-            $this->setRestApiEndPoint('leftnavigation.php/');
-            //    print_r($this->restApiBaseUrl.$this->restApiEndPoint.$this->restApiEndPointFunction);
-            $this->setRestApiFullPathUrl($this->restApiBaseUrl . $this->restApiEndPoint . $this->restApiEndPointFunction);
-        }  else if (substr($endPointFunction, -10) == '_infoUsers') {
-            $this->setRestApiEndPoint('infousers.php/');
-            //    print_r($this->restApiBaseUrl.$this->restApiEndPoint.$this->restApiEndPointFunction);
-            $this->setRestApiFullPathUrl($this->restApiBaseUrl . $this->restApiEndPoint . $this->restApiEndPointFunction);
-        } else if (substr($endPointFunction, -12) == '_syscountrys') {
-            $this->setRestApiEndPoint('syscountrys.php/');
-            //    print_r($this->restApiBaseUrl.$this->restApiEndPoint.$this->restApiEndPointFunction);
-            $this->setRestApiFullPathUrl($this->restApiBaseUrl . $this->restApiEndPoint . $this->restApiEndPointFunction);
-        } else if (substr($endPointFunction, -8) == '_syscity') {
-            $this->setRestApiEndPoint('syscity.php/');
-            //    print_r($this->restApiBaseUrl.$this->restApiEndPoint.$this->restApiEndPointFunction);
-            $this->setRestApiFullPathUrl($this->restApiBaseUrl . $this->restApiEndPoint . $this->restApiEndPointFunction);
-        } else if (substr($endPointFunction, -12) == '_syslanguage') {
-            $this->setRestApiEndPoint('syslanguage.php/');
-            //    print_r($this->restApiBaseUrl.$this->restApiEndPoint.$this->restApiEndPointFunction);
-            $this->setRestApiFullPathUrl($this->restApiBaseUrl . $this->restApiEndPoint . $this->restApiEndPointFunction);
-        }else if (substr($endPointFunction, -11) == '_sysborough') {
-            $this->setRestApiEndPoint('sysborough.php/');
-            //    print_r($this->restApiBaseUrl.$this->restApiEndPoint.$this->restApiEndPointFunction);
-            $this->setRestApiFullPathUrl($this->restApiBaseUrl . $this->restApiEndPoint . $this->restApiEndPointFunction);
-        }else if (substr($endPointFunction, -11) == '_sysvillage') {
-            $this->setRestApiEndPoint('sysvillage.php/');
-            //    print_r($this->restApiBaseUrl.$this->restApiEndPoint.$this->restApiEndPointFunction);
-            $this->setRestApiFullPathUrl($this->restApiBaseUrl . $this->restApiEndPoint . $this->restApiEndPointFunction);
-        }else if (substr($endPointFunction, -14) == '_blLoginLogout') {
-            $this->setRestApiEndPoint('blLoginLogout.php/');
-            //    print_r($this->restApiBaseUrl.$this->restApiEndPoint.$this->restApiEndPointFunction);
-            $this->setRestApiFullPathUrl($this->restApiBaseUrl . $this->restApiEndPoint . $this->restApiEndPointFunction);
-        }else if (substr($endPointFunction, -12) == '_sysAclRoles') {
-            $this->setRestApiEndPoint('sysaclroles.php/');
-            //    print_r($this->restApiBaseUrl.$this->restApiEndPoint.$this->restApiEndPointFunction);
-            $this->setRestApiFullPathUrl($this->restApiBaseUrl . $this->restApiEndPoint . $this->restApiEndPointFunction);
-        }else if (substr($endPointFunction, -16) == '_sysAclResources') {
-            $this->setRestApiEndPoint('sysaclresources.php/');
-            //    print_r($this->restApiBaseUrl.$this->restApiEndPoint.$this->restApiEndPointFunction);
-            $this->setRestApiFullPathUrl($this->restApiBaseUrl . $this->restApiEndPoint . $this->restApiEndPointFunction);
-        }else if (substr($endPointFunction, -16) == '_sysAclPrivilege') {
-            $this->setRestApiEndPoint('sysaclprivilege.php/');
-            //    print_r($this->restApiBaseUrl.$this->restApiEndPoint.$this->restApiEndPointFunction);
-            $this->setRestApiFullPathUrl($this->restApiBaseUrl . $this->restApiEndPoint . $this->restApiEndPointFunction);
-        }else if (substr($endPointFunction, -13) == '_sysAclRrpMap') {
-            $this->setRestApiEndPoint('sysaclrrpmap.php/');
-            //    print_r($this->restApiBaseUrl.$this->restApiEndPoint.$this->restApiEndPointFunction);
-            $this->setRestApiFullPathUrl($this->restApiBaseUrl . $this->restApiEndPoint . $this->restApiEndPointFunction);
-        }  else if (substr($endPointFunction, -23) == '_sysSpecificDefinitions') {
-            $this->setRestApiEndPoint('sysspecificdefinitions.php/');
-            //    print_r($this->restApiBaseUrl.$this->restApiEndPoint.$this->restApiEndPointFunction);
-            $this->setRestApiFullPathUrl($this->restApiBaseUrl . $this->restApiEndPoint . $this->restApiEndPointFunction);
-        } else if (substr($endPointFunction, -24) == '_infoUsersCommunications') {
-            $this->setRestApiEndPoint('infouserscommunications.php/');
-            //    print_r($this->restApiBaseUrl.$this->restApiEndPoint.$this->restApiEndPointFunction);
-            $this->setRestApiFullPathUrl($this->restApiBaseUrl . $this->restApiEndPoint . $this->restApiEndPointFunction);
-        }else if (substr($endPointFunction, -19) == '_infoUsersAddresses') {
-            $this->setRestApiEndPoint('infousersaddresses.php/');
-            //    print_r($this->restApiBaseUrl.$this->restApiEndPoint.$this->restApiEndPointFunction);
-            $this->setRestApiFullPathUrl($this->restApiBaseUrl . $this->restApiEndPoint . $this->restApiEndPointFunction);
-        }else if (substr($endPointFunction, -19) == '_blActivationReport') {
-            $this->setRestApiEndPoint('BlActivationReport.php/');
-            //    print_r($this->restApiBaseUrl.$this->restApiEndPoint.$this->restApiEndPointFunction);
-            $this->setRestApiFullPathUrl($this->restApiBaseUrl . $this->restApiEndPoint . $this->restApiEndPointFunction);
-        }else if (substr($endPointFunction, -18) == '_sysOperationTypes') {
-            $this->setRestApiEndPoint('sysOperationTypes.php/');
-            //    print_r($this->restApiBaseUrl.$this->restApiEndPoint.$this->restApiEndPointFunction);
-            $this->setRestApiFullPathUrl($this->restApiBaseUrl . $this->restApiEndPoint . $this->restApiEndPointFunction);
-        }else if (substr($endPointFunction, -23) == '_sysOperationTypesTools') {
-            $this->setRestApiEndPoint('sysoperationtypestools.php/');
-            //    print_r($this->restApiBaseUrl.$this->restApiEndPoint.$this->restApiEndPointFunction);
-            $this->setRestApiFullPathUrl($this->restApiBaseUrl . $this->restApiEndPoint . $this->restApiEndPointFunction);
-        }else if (substr($endPointFunction, -10) == '_infoError') {
-            $this->setRestApiEndPoint('infoerror.php/');
-            //    print_r($this->restApiBaseUrl.$this->restApiEndPoint.$this->restApiEndPointFunction);
-            $this->setRestApiFullPathUrl($this->restApiBaseUrl . $this->restApiEndPoint . $this->restApiEndPointFunction);
-        }else if (substr($endPointFunction, -9) == '_sysUnits') {           
-            $this->setRestApiEndPoint('sysunits.php/');
-            //    print_r($this->restApiBaseUrl.$this->restApiEndPoint.$this->restApiEndPointFunction);
-            $this->setRestApiFullPathUrl($this->restApiBaseUrl . $this->restApiEndPoint . $this->restApiEndPointFunction);
-        } else if (substr($endPointFunction, -11) == '_hstryLogin') {
-            $this->setRestApiEndPoint('hstrylogin.php/');
-            //    print_r($this->restApiBaseUrl.$this->restApiEndPoint.$this->restApiEndPointFunction);
-            $this->setRestApiFullPathUrl($this->restApiBaseUrl . $this->restApiEndPoint . $this->restApiEndPointFunction);
-        } else if (substr($endPointFunction, -24) == '_blAdminActivationReport') {
-            $this->setRestApiEndPoint('bladminactivationreport.php/');
-            //    print_r($this->restApiBaseUrl.$this->restApiEndPoint.$this->restApiEndPointFunction);
-            $this->setRestApiFullPathUrl($this->restApiBaseUrl . $this->restApiEndPoint . $this->restApiEndPointFunction);
-        } else if (substr($endPointFunction, -14) == '_logConnection') {
-            $this->setRestApiEndPoint('logconnection.php/');
-            //    print_r($this->restApiBaseUrl.$this->restApiEndPoint.$this->restApiEndPointFunction);
-            $this->setRestApiFullPathUrl($this->restApiBaseUrl . $this->restApiEndPoint . $this->restApiEndPointFunction);
-        }  else if (substr($endPointFunction, -12) == '_logServices') {
-            $this->setRestApiEndPoint('logservices.php/');
-            //    print_r($this->restApiBaseUrl.$this->restApiEndPoint.$this->restApiEndPointFunction);
-            $this->setRestApiFullPathUrl($this->restApiBaseUrl . $this->restApiEndPoint . $this->restApiEndPointFunction);
-        }  else if (substr($endPointFunction, -9) == '_logAdmin') {
-            $this->setRestApiEndPoint('logadmin.php/');
-            //    print_r($this->restApiBaseUrl.$this->restApiEndPoint.$this->restApiEndPointFunction);
-            $this->setRestApiFullPathUrl($this->restApiBaseUrl . $this->restApiEndPoint . $this->restApiEndPointFunction);
-        }  else if (substr($endPointFunction, -18) == '_sysCertifications') {
-            $this->setRestApiEndPoint('syscertifications.php/');
-            //    print_r($this->restApiBaseUrl.$this->restApiEndPoint.$this->restApiEndPointFunction);
-            $this->setRestApiFullPathUrl($this->restApiBaseUrl . $this->restApiEndPoint . $this->restApiEndPointFunction);
-        } else if (substr($endPointFunction, -15) == '_sysUnitSystems') {
-            $this->setRestApiEndPoint('sysunitsystems.php/');
-            //    print_r($this->restApiBaseUrl.$this->restApiEndPoint.$this->restApiEndPointFunction);
-            $this->setRestApiFullPathUrl($this->restApiBaseUrl . $this->restApiEndPoint . $this->restApiEndPointFunction);
-        }  else if (substr($endPointFunction, -21) == '_infoUsersSocialmedia') {
-            $this->setRestApiEndPoint('infouserssocialmedia.php/');
-            //    print_r($this->restApiBaseUrl.$this->restApiEndPoint.$this->restApiEndPointFunction);
-            $this->setRestApiFullPathUrl($this->restApiBaseUrl . $this->restApiEndPoint . $this->restApiEndPointFunction);
-        }  else if (substr($endPointFunction, -15) == '_sysSocialMedia') {
-            $this->setRestApiEndPoint('syssocialmedia.php/');
-            //    print_r($this->restApiBaseUrl.$this->restApiEndPoint.$this->restApiEndPointFunction);
-            $this->setRestApiFullPathUrl($this->restApiBaseUrl . $this->restApiEndPoint . $this->restApiEndPointFunction);
-        }   else if (substr($endPointFunction, -14) == '_sysMailServer') {
-            $this->setRestApiEndPoint('sysmailserver.php/');
-            //    print_r($this->restApiBaseUrl.$this->restApiEndPoint.$this->restApiEndPointFunction);
-            $this->setRestApiFullPathUrl($this->restApiBaseUrl . $this->restApiEndPoint . $this->restApiEndPointFunction);
-        }   else if (substr($endPointFunction, -12) == '_sysClusters') {
-            $this->setRestApiEndPoint('sysclusters.php/');
-            //    print_r($this->restApiBaseUrl.$this->restApiEndPoint.$this->restApiEndPointFunction);
-            $this->setRestApiFullPathUrl($this->restApiBaseUrl . $this->restApiEndPoint . $this->restApiEndPointFunction);
-        }   else if (substr($endPointFunction, -16) == '_infoUsersVerbal') {
-            $this->setRestApiEndPoint('infousersverbal.php/');
-            //    print_r($this->restApiBaseUrl.$this->restApiEndPoint.$this->restApiEndPointFunction);
-            $this->setRestApiFullPathUrl($this->restApiBaseUrl . $this->restApiEndPoint . $this->restApiEndPointFunction);
-        }   else if (substr($endPointFunction, -26) == '_infoUsersProductsServices') {
-            $this->setRestApiEndPoint('infousersproductsservices.php/');
-            //    print_r($this->restApiBaseUrl.$this->restApiEndPoint.$this->restApiEndPointFunction);
-            $this->setRestApiFullPathUrl($this->restApiBaseUrl . $this->restApiEndPoint . $this->restApiEndPointFunction);
-        }   else if (substr($endPointFunction, -19) == '_sysMembershipTypes') {
-            $this->setRestApiEndPoint('sysmembershiptypes.php/');
-            //    print_r($this->restApiBaseUrl.$this->restApiEndPoint.$this->restApiEndPointFunction);
-            $this->setRestApiFullPathUrl($this->restApiBaseUrl . $this->restApiEndPoint . $this->restApiEndPointFunction);
-        }   else if (substr($endPointFunction, -10) == '_sysAclRrp') {
-            $this->setRestApiEndPoint('sysaclrrp.php/');
-            //    print_r($this->restApiBaseUrl.$this->restApiEndPoint.$this->restApiEndPointFunction);
-            $this->setRestApiFullPathUrl($this->restApiBaseUrl . $this->restApiEndPoint . $this->restApiEndPointFunction);
-        }   else if (substr($endPointFunction, -16) == '_sysUniversities') {
-            $this->setRestApiEndPoint('sysuniversities.php/');
-            //    print_r($this->restApiBaseUrl.$this->restApiEndPoint.$this->restApiEndPointFunction);
-            $this->setRestApiFullPathUrl($this->restApiBaseUrl . $this->restApiEndPoint . $this->restApiEndPointFunction);
-        }   else if (substr($endPointFunction, -13) == '_sysMenuTypes') {
-            $this->setRestApiEndPoint('sysmenutypes.php/');
-            //    print_r($this->restApiBaseUrl.$this->restApiEndPoint.$this->restApiEndPointFunction);
-            $this->setRestApiFullPathUrl($this->restApiBaseUrl . $this->restApiEndPoint . $this->restApiEndPointFunction);
-        }   else if (substr($endPointFunction, -14) == '_sysAclModules') {
-            $this->setRestApiEndPoint('sysaclmodules.php/');
-            //    print_r($this->restApiBaseUrl.$this->restApiEndPoint.$this->restApiEndPointFunction);
-            $this->setRestApiFullPathUrl($this->restApiBaseUrl . $this->restApiEndPoint . $this->restApiEndPointFunction);
-        }   else if (substr($endPointFunction, -14) == '_sysAclActions') {
-            $this->setRestApiEndPoint('sysaclactions.php/');
-            //    print_r($this->restApiBaseUrl.$this->restApiEndPoint.$this->restApiEndPointFunction);
-            $this->setRestApiFullPathUrl($this->restApiBaseUrl . $this->restApiEndPoint . $this->restApiEndPointFunction);
-        }   else if (substr($endPointFunction, -23) == '_sysAclMenuTypesActions') {
-            $this->setRestApiEndPoint('sysaclmenutypesactions.php/');
-            //    print_r($this->restApiBaseUrl.$this->restApiEndPoint.$this->restApiEndPointFunction);
-            $this->setRestApiFullPathUrl($this->restApiBaseUrl . $this->restApiEndPoint . $this->restApiEndPointFunction);
-        }   else if (substr($endPointFunction, -22) == '_sysAclRrpRestservices') {
-            $this->setRestApiEndPoint('sysaclrrprestservices.php/');
-            //    print_r($this->restApiBaseUrl.$this->restApiEndPoint.$this->restApiEndPointFunction);
-            $this->setRestApiFullPathUrl($this->restApiBaseUrl . $this->restApiEndPoint . $this->restApiEndPointFunction);
-        }   else if (substr($endPointFunction, -18) == '_sysServicesGroups') {
-            $this->setRestApiEndPoint('sysservicesgroups.php/');
-            //    print_r($this->restApiBaseUrl.$this->restApiEndPoint.$this->restApiEndPointFunction);
-            $this->setRestApiFullPathUrl($this->restApiBaseUrl . $this->restApiEndPoint . $this->restApiEndPointFunction);
-        }   else if (substr($endPointFunction, -19) == '_sysAclRestservices') {
-            $this->setRestApiEndPoint('sysaclrestservices.php/');
-            //    print_r($this->restApiBaseUrl.$this->restApiEndPoint.$this->restApiEndPointFunction);
-            $this->setRestApiFullPathUrl($this->restApiBaseUrl . $this->restApiEndPoint . $this->restApiEndPointFunction);
-        }   else if (substr($endPointFunction, -20) == '_sysAssignDefinition') {
-            $this->setRestApiEndPoint('sysassigndefinition.php/');
-            //    print_r($this->restApiBaseUrl.$this->restApiEndPoint.$this->restApiEndPointFunction);
-            $this->setRestApiFullPathUrl($this->restApiBaseUrl . $this->restApiEndPoint . $this->restApiEndPointFunction);
-        }   else if (substr($endPointFunction, -25) == '_sysAssignDefinitionRoles') {          
-            $this->setRestApiEndPoint('sysassigndefinitionroles.php/');
-            //    print_r($this->restApiBaseUrl.$this->restApiEndPoint.$this->restApiEndPointFunction);
-            $this->setRestApiFullPathUrl($this->restApiBaseUrl . $this->restApiEndPoint . $this->restApiEndPointFunction);
-        }   else if (substr($endPointFunction, -8) == '_pgClass') {          
-            $this->setRestApiEndPoint('pgclass.php/');
-            //    print_r($this->restApiBaseUrl.$this->restApiEndPoint.$this->restApiEndPointFunction);
-            $this->setRestApiFullPathUrl($this->restApiBaseUrl . $this->restApiEndPoint . $this->restApiEndPointFunction);
-        }   else if (substr($endPointFunction, -21) == '_sysOperationTypesRrp') {          
-            $this->setRestApiEndPoint('sysoperationtypesrrp.php/');
-            //    print_r($this->restApiBaseUrl.$this->restApiEndPoint.$this->restApiEndPointFunction);
-            $this->setRestApiFullPathUrl($this->restApiBaseUrl . $this->restApiEndPoint . $this->restApiEndPointFunction);
-        }   else if (substr($endPointFunction, -16) == '_sysAclActionRrp') {          
-            $this->setRestApiEndPoint('sysaclactionrrp.php/');
-            //    print_r($this->restApiBaseUrl.$this->restApiEndPoint.$this->restApiEndPointFunction);
-            $this->setRestApiFullPathUrl($this->restApiBaseUrl . $this->restApiEndPoint . $this->restApiEndPointFunction);
-        }   else if (substr($endPointFunction, -28) == '_sysAclActionRrpRestservices') {          
-            $this->setRestApiEndPoint('sysaclactionrrprestservices.php/');
-            //    print_r($this->restApiBaseUrl.$this->restApiEndPoint.$this->restApiEndPointFunction);
-            $this->setRestApiFullPathUrl($this->restApiBaseUrl . $this->restApiEndPoint . $this->restApiEndPointFunction);
-        }   else if (substr($endPointFunction, -21) == '_infoUsersSendingMail') {          
-            $this->setRestApiEndPoint('infouserssendingmail.php/');
-            //    print_r($this->restApiBaseUrl.$this->restApiEndPoint.$this->restApiEndPointFunction);
-            $this->setRestApiFullPathUrl($this->restApiBaseUrl . $this->restApiEndPoint . $this->restApiEndPointFunction);
-        }   else if (substr($endPointFunction, -18) == '_actProcessConfirm') {          
-            $this->setRestApiEndPoint('actprocessconfirm.php/');
-            //    print_r($this->restApiBaseUrl.$this->restApiEndPoint.$this->restApiEndPointFunction);
-            $this->setRestApiFullPathUrl($this->restApiBaseUrl . $this->restApiEndPoint . $this->restApiEndPointFunction);
-        }   else if (substr($endPointFunction, -11) == '_sysSectors') {
-            $this->setRestApiEndPoint('syssectors.php/');
-            //    print_r($this->restApiBaseUrl.$this->restApiEndPoint.$this->restApiEndPointFunction);
-            $this->setRestApiFullPathUrl($this->restApiBaseUrl . $this->restApiEndPoint . $this->restApiEndPointFunction);
-        }   else if (substr($endPointFunction, -15) == '_sysCorporation') {
-            $this->setRestApiEndPoint('syscorporation.php/');
-            //    print_r($this->restApiBaseUrl.$this->restApiEndPoint.$this->restApiEndPointFunction);
-            $this->setRestApiFullPathUrl($this->restApiBaseUrl . $this->restApiEndPoint . $this->restApiEndPointFunction);
-        }   else if (substr($endPointFunction, -12) == '_sysSubjects') {
-            $this->setRestApiEndPoint('syssubjects.php/');
-            //    print_r($this->restApiBaseUrl.$this->restApiEndPoint.$this->restApiEndPointFunction);
-            $this->setRestApiFullPathUrl($this->restApiBaseUrl . $this->restApiEndPoint . $this->restApiEndPointFunction);
-        }   else if (substr($endPointFunction, -10) == '_sysParams') {
-            $this->setRestApiEndPoint('sysparams.php/');
-            //    print_r($this->restApiBaseUrl.$this->restApiEndPoint.$this->restApiEndPointFunction);
-            $this->setRestApiFullPathUrl($this->restApiBaseUrl . $this->restApiEndPoint . $this->restApiEndPointFunction);
-        } else if (substr($endPointFunction, -11) == '_InfoDuyuru') {
-            $this->setRestApiEndPoint('infoduyuru.php/');
-            //    print_r($this->restApiBaseUrl.$this->restApiEndPoint.$this->restApiEndPointFunction);
-            $this->setRestApiFullPathUrl($this->restApiBaseUrl . $this->restApiEndPoint . $this->restApiEndPointFunction);
-        } else if (substr($endPointFunction, -11) == '_sysokultur') {
-            $this->setRestApiEndPoint('sysokultur.php/');
-            //    print_r($this->restApiBaseUrl.$this->restApiEndPoint.$this->restApiEndPointFunction);
-            $this->setRestApiFullPathUrl($this->restApiBaseUrl . $this->restApiEndPoint . $this->restApiEndPointFunction);
-        } else if (substr($endPointFunction, -24) == '_sysogretmenbranstipleri') {
-            $this->setRestApiEndPoint('sysogretmenbranstipleri.php/');
-            //    print_r($this->restApiBaseUrl.$this->restApiEndPoint.$this->restApiEndPointFunction);
-            $this->setRestApiFullPathUrl($this->restApiBaseUrl . $this->restApiEndPoint . $this->restApiEndPointFunction);
-        }  
-    */
-        
-        
-        }
+        //    print_r($this->restApiBaseUrl.$this->restApiEndPoint.$this->restApiEndPointFunction);
+        $this->setRestApiFullPathUrl($this->restApiBaseUrl . $this->restApiEndPoint . $this->restApiEndPointFunction);
 
-    
-    
-   
+
+        /*
+          if (substr($endPointFunction, -5) == '_test') {
+          //$this->setEndPointUrl("http://localhost/slim2_test/index.php/");
+          $this->setRestApiFullPathUrl($this->restApiBaseUrl . $this->restApiEndPoint . $this->restApiEndPointFunction);
+          } else if (substr($endPointFunction, -15) == '_leftnavigation') {
+          $this->setRestApiEndPoint('leftnavigation.php/');
+          //    print_r($this->restApiBaseUrl.$this->restApiEndPoint.$this->restApiEndPointFunction);
+          $this->setRestApiFullPathUrl($this->restApiBaseUrl . $this->restApiEndPoint . $this->restApiEndPointFunction);
+          }  else if (substr($endPointFunction, -10) == '_infoUsers') {
+          $this->setRestApiEndPoint('infousers.php/');
+          //    print_r($this->restApiBaseUrl.$this->restApiEndPoint.$this->restApiEndPointFunction);
+          $this->setRestApiFullPathUrl($this->restApiBaseUrl . $this->restApiEndPoint . $this->restApiEndPointFunction);
+          } else if (substr($endPointFunction, -12) == '_syscountrys') {
+          $this->setRestApiEndPoint('syscountrys.php/');
+          //    print_r($this->restApiBaseUrl.$this->restApiEndPoint.$this->restApiEndPointFunction);
+          $this->setRestApiFullPathUrl($this->restApiBaseUrl . $this->restApiEndPoint . $this->restApiEndPointFunction);
+          } else if (substr($endPointFunction, -8) == '_syscity') {
+          $this->setRestApiEndPoint('syscity.php/');
+          //    print_r($this->restApiBaseUrl.$this->restApiEndPoint.$this->restApiEndPointFunction);
+          $this->setRestApiFullPathUrl($this->restApiBaseUrl . $this->restApiEndPoint . $this->restApiEndPointFunction);
+          } else if (substr($endPointFunction, -12) == '_syslanguage') {
+          $this->setRestApiEndPoint('syslanguage.php/');
+          //    print_r($this->restApiBaseUrl.$this->restApiEndPoint.$this->restApiEndPointFunction);
+          $this->setRestApiFullPathUrl($this->restApiBaseUrl . $this->restApiEndPoint . $this->restApiEndPointFunction);
+          }else if (substr($endPointFunction, -11) == '_sysborough') {
+          $this->setRestApiEndPoint('sysborough.php/');
+          //    print_r($this->restApiBaseUrl.$this->restApiEndPoint.$this->restApiEndPointFunction);
+          $this->setRestApiFullPathUrl($this->restApiBaseUrl . $this->restApiEndPoint . $this->restApiEndPointFunction);
+          }else if (substr($endPointFunction, -11) == '_sysvillage') {
+          $this->setRestApiEndPoint('sysvillage.php/');
+          //    print_r($this->restApiBaseUrl.$this->restApiEndPoint.$this->restApiEndPointFunction);
+          $this->setRestApiFullPathUrl($this->restApiBaseUrl . $this->restApiEndPoint . $this->restApiEndPointFunction);
+          }else if (substr($endPointFunction, -14) == '_blLoginLogout') {
+          $this->setRestApiEndPoint('blLoginLogout.php/');
+          //    print_r($this->restApiBaseUrl.$this->restApiEndPoint.$this->restApiEndPointFunction);
+          $this->setRestApiFullPathUrl($this->restApiBaseUrl . $this->restApiEndPoint . $this->restApiEndPointFunction);
+          }else if (substr($endPointFunction, -12) == '_sysAclRoles') {
+          $this->setRestApiEndPoint('sysaclroles.php/');
+          //    print_r($this->restApiBaseUrl.$this->restApiEndPoint.$this->restApiEndPointFunction);
+          $this->setRestApiFullPathUrl($this->restApiBaseUrl . $this->restApiEndPoint . $this->restApiEndPointFunction);
+          }else if (substr($endPointFunction, -16) == '_sysAclResources') {
+          $this->setRestApiEndPoint('sysaclresources.php/');
+          //    print_r($this->restApiBaseUrl.$this->restApiEndPoint.$this->restApiEndPointFunction);
+          $this->setRestApiFullPathUrl($this->restApiBaseUrl . $this->restApiEndPoint . $this->restApiEndPointFunction);
+          }else if (substr($endPointFunction, -16) == '_sysAclPrivilege') {
+          $this->setRestApiEndPoint('sysaclprivilege.php/');
+          //    print_r($this->restApiBaseUrl.$this->restApiEndPoint.$this->restApiEndPointFunction);
+          $this->setRestApiFullPathUrl($this->restApiBaseUrl . $this->restApiEndPoint . $this->restApiEndPointFunction);
+          }else if (substr($endPointFunction, -13) == '_sysAclRrpMap') {
+          $this->setRestApiEndPoint('sysaclrrpmap.php/');
+          //    print_r($this->restApiBaseUrl.$this->restApiEndPoint.$this->restApiEndPointFunction);
+          $this->setRestApiFullPathUrl($this->restApiBaseUrl . $this->restApiEndPoint . $this->restApiEndPointFunction);
+          }  else if (substr($endPointFunction, -23) == '_sysSpecificDefinitions') {
+          $this->setRestApiEndPoint('sysspecificdefinitions.php/');
+          //    print_r($this->restApiBaseUrl.$this->restApiEndPoint.$this->restApiEndPointFunction);
+          $this->setRestApiFullPathUrl($this->restApiBaseUrl . $this->restApiEndPoint . $this->restApiEndPointFunction);
+          } else if (substr($endPointFunction, -24) == '_infoUsersCommunications') {
+          $this->setRestApiEndPoint('infouserscommunications.php/');
+          //    print_r($this->restApiBaseUrl.$this->restApiEndPoint.$this->restApiEndPointFunction);
+          $this->setRestApiFullPathUrl($this->restApiBaseUrl . $this->restApiEndPoint . $this->restApiEndPointFunction);
+          }else if (substr($endPointFunction, -19) == '_infoUsersAddresses') {
+          $this->setRestApiEndPoint('infousersaddresses.php/');
+          //    print_r($this->restApiBaseUrl.$this->restApiEndPoint.$this->restApiEndPointFunction);
+          $this->setRestApiFullPathUrl($this->restApiBaseUrl . $this->restApiEndPoint . $this->restApiEndPointFunction);
+          }else if (substr($endPointFunction, -19) == '_blActivationReport') {
+          $this->setRestApiEndPoint('BlActivationReport.php/');
+          //    print_r($this->restApiBaseUrl.$this->restApiEndPoint.$this->restApiEndPointFunction);
+          $this->setRestApiFullPathUrl($this->restApiBaseUrl . $this->restApiEndPoint . $this->restApiEndPointFunction);
+          }else if (substr($endPointFunction, -18) == '_sysOperationTypes') {
+          $this->setRestApiEndPoint('sysOperationTypes.php/');
+          //    print_r($this->restApiBaseUrl.$this->restApiEndPoint.$this->restApiEndPointFunction);
+          $this->setRestApiFullPathUrl($this->restApiBaseUrl . $this->restApiEndPoint . $this->restApiEndPointFunction);
+          }else if (substr($endPointFunction, -23) == '_sysOperationTypesTools') {
+          $this->setRestApiEndPoint('sysoperationtypestools.php/');
+          //    print_r($this->restApiBaseUrl.$this->restApiEndPoint.$this->restApiEndPointFunction);
+          $this->setRestApiFullPathUrl($this->restApiBaseUrl . $this->restApiEndPoint . $this->restApiEndPointFunction);
+          }else if (substr($endPointFunction, -10) == '_infoError') {
+          $this->setRestApiEndPoint('infoerror.php/');
+          //    print_r($this->restApiBaseUrl.$this->restApiEndPoint.$this->restApiEndPointFunction);
+          $this->setRestApiFullPathUrl($this->restApiBaseUrl . $this->restApiEndPoint . $this->restApiEndPointFunction);
+          }else if (substr($endPointFunction, -9) == '_sysUnits') {
+          $this->setRestApiEndPoint('sysunits.php/');
+          //    print_r($this->restApiBaseUrl.$this->restApiEndPoint.$this->restApiEndPointFunction);
+          $this->setRestApiFullPathUrl($this->restApiBaseUrl . $this->restApiEndPoint . $this->restApiEndPointFunction);
+          } else if (substr($endPointFunction, -11) == '_hstryLogin') {
+          $this->setRestApiEndPoint('hstrylogin.php/');
+          //    print_r($this->restApiBaseUrl.$this->restApiEndPoint.$this->restApiEndPointFunction);
+          $this->setRestApiFullPathUrl($this->restApiBaseUrl . $this->restApiEndPoint . $this->restApiEndPointFunction);
+          } else if (substr($endPointFunction, -24) == '_blAdminActivationReport') {
+          $this->setRestApiEndPoint('bladminactivationreport.php/');
+          //    print_r($this->restApiBaseUrl.$this->restApiEndPoint.$this->restApiEndPointFunction);
+          $this->setRestApiFullPathUrl($this->restApiBaseUrl . $this->restApiEndPoint . $this->restApiEndPointFunction);
+          } else if (substr($endPointFunction, -14) == '_logConnection') {
+          $this->setRestApiEndPoint('logconnection.php/');
+          //    print_r($this->restApiBaseUrl.$this->restApiEndPoint.$this->restApiEndPointFunction);
+          $this->setRestApiFullPathUrl($this->restApiBaseUrl . $this->restApiEndPoint . $this->restApiEndPointFunction);
+          }  else if (substr($endPointFunction, -12) == '_logServices') {
+          $this->setRestApiEndPoint('logservices.php/');
+          //    print_r($this->restApiBaseUrl.$this->restApiEndPoint.$this->restApiEndPointFunction);
+          $this->setRestApiFullPathUrl($this->restApiBaseUrl . $this->restApiEndPoint . $this->restApiEndPointFunction);
+          }  else if (substr($endPointFunction, -9) == '_logAdmin') {
+          $this->setRestApiEndPoint('logadmin.php/');
+          //    print_r($this->restApiBaseUrl.$this->restApiEndPoint.$this->restApiEndPointFunction);
+          $this->setRestApiFullPathUrl($this->restApiBaseUrl . $this->restApiEndPoint . $this->restApiEndPointFunction);
+          }  else if (substr($endPointFunction, -18) == '_sysCertifications') {
+          $this->setRestApiEndPoint('syscertifications.php/');
+          //    print_r($this->restApiBaseUrl.$this->restApiEndPoint.$this->restApiEndPointFunction);
+          $this->setRestApiFullPathUrl($this->restApiBaseUrl . $this->restApiEndPoint . $this->restApiEndPointFunction);
+          } else if (substr($endPointFunction, -15) == '_sysUnitSystems') {
+          $this->setRestApiEndPoint('sysunitsystems.php/');
+          //    print_r($this->restApiBaseUrl.$this->restApiEndPoint.$this->restApiEndPointFunction);
+          $this->setRestApiFullPathUrl($this->restApiBaseUrl . $this->restApiEndPoint . $this->restApiEndPointFunction);
+          }  else if (substr($endPointFunction, -21) == '_infoUsersSocialmedia') {
+          $this->setRestApiEndPoint('infouserssocialmedia.php/');
+          //    print_r($this->restApiBaseUrl.$this->restApiEndPoint.$this->restApiEndPointFunction);
+          $this->setRestApiFullPathUrl($this->restApiBaseUrl . $this->restApiEndPoint . $this->restApiEndPointFunction);
+          }  else if (substr($endPointFunction, -15) == '_sysSocialMedia') {
+          $this->setRestApiEndPoint('syssocialmedia.php/');
+          //    print_r($this->restApiBaseUrl.$this->restApiEndPoint.$this->restApiEndPointFunction);
+          $this->setRestApiFullPathUrl($this->restApiBaseUrl . $this->restApiEndPoint . $this->restApiEndPointFunction);
+          }   else if (substr($endPointFunction, -14) == '_sysMailServer') {
+          $this->setRestApiEndPoint('sysmailserver.php/');
+          //    print_r($this->restApiBaseUrl.$this->restApiEndPoint.$this->restApiEndPointFunction);
+          $this->setRestApiFullPathUrl($this->restApiBaseUrl . $this->restApiEndPoint . $this->restApiEndPointFunction);
+          }   else if (substr($endPointFunction, -12) == '_sysClusters') {
+          $this->setRestApiEndPoint('sysclusters.php/');
+          //    print_r($this->restApiBaseUrl.$this->restApiEndPoint.$this->restApiEndPointFunction);
+          $this->setRestApiFullPathUrl($this->restApiBaseUrl . $this->restApiEndPoint . $this->restApiEndPointFunction);
+          }   else if (substr($endPointFunction, -16) == '_infoUsersVerbal') {
+          $this->setRestApiEndPoint('infousersverbal.php/');
+          //    print_r($this->restApiBaseUrl.$this->restApiEndPoint.$this->restApiEndPointFunction);
+          $this->setRestApiFullPathUrl($this->restApiBaseUrl . $this->restApiEndPoint . $this->restApiEndPointFunction);
+          }   else if (substr($endPointFunction, -26) == '_infoUsersProductsServices') {
+          $this->setRestApiEndPoint('infousersproductsservices.php/');
+          //    print_r($this->restApiBaseUrl.$this->restApiEndPoint.$this->restApiEndPointFunction);
+          $this->setRestApiFullPathUrl($this->restApiBaseUrl . $this->restApiEndPoint . $this->restApiEndPointFunction);
+          }   else if (substr($endPointFunction, -19) == '_sysMembershipTypes') {
+          $this->setRestApiEndPoint('sysmembershiptypes.php/');
+          //    print_r($this->restApiBaseUrl.$this->restApiEndPoint.$this->restApiEndPointFunction);
+          $this->setRestApiFullPathUrl($this->restApiBaseUrl . $this->restApiEndPoint . $this->restApiEndPointFunction);
+          }   else if (substr($endPointFunction, -10) == '_sysAclRrp') {
+          $this->setRestApiEndPoint('sysaclrrp.php/');
+          //    print_r($this->restApiBaseUrl.$this->restApiEndPoint.$this->restApiEndPointFunction);
+          $this->setRestApiFullPathUrl($this->restApiBaseUrl . $this->restApiEndPoint . $this->restApiEndPointFunction);
+          }   else if (substr($endPointFunction, -16) == '_sysUniversities') {
+          $this->setRestApiEndPoint('sysuniversities.php/');
+          //    print_r($this->restApiBaseUrl.$this->restApiEndPoint.$this->restApiEndPointFunction);
+          $this->setRestApiFullPathUrl($this->restApiBaseUrl . $this->restApiEndPoint . $this->restApiEndPointFunction);
+          }   else if (substr($endPointFunction, -13) == '_sysMenuTypes') {
+          $this->setRestApiEndPoint('sysmenutypes.php/');
+          //    print_r($this->restApiBaseUrl.$this->restApiEndPoint.$this->restApiEndPointFunction);
+          $this->setRestApiFullPathUrl($this->restApiBaseUrl . $this->restApiEndPoint . $this->restApiEndPointFunction);
+          }   else if (substr($endPointFunction, -14) == '_sysAclModules') {
+          $this->setRestApiEndPoint('sysaclmodules.php/');
+          //    print_r($this->restApiBaseUrl.$this->restApiEndPoint.$this->restApiEndPointFunction);
+          $this->setRestApiFullPathUrl($this->restApiBaseUrl . $this->restApiEndPoint . $this->restApiEndPointFunction);
+          }   else if (substr($endPointFunction, -14) == '_sysAclActions') {
+          $this->setRestApiEndPoint('sysaclactions.php/');
+          //    print_r($this->restApiBaseUrl.$this->restApiEndPoint.$this->restApiEndPointFunction);
+          $this->setRestApiFullPathUrl($this->restApiBaseUrl . $this->restApiEndPoint . $this->restApiEndPointFunction);
+          }   else if (substr($endPointFunction, -23) == '_sysAclMenuTypesActions') {
+          $this->setRestApiEndPoint('sysaclmenutypesactions.php/');
+          //    print_r($this->restApiBaseUrl.$this->restApiEndPoint.$this->restApiEndPointFunction);
+          $this->setRestApiFullPathUrl($this->restApiBaseUrl . $this->restApiEndPoint . $this->restApiEndPointFunction);
+          }   else if (substr($endPointFunction, -22) == '_sysAclRrpRestservices') {
+          $this->setRestApiEndPoint('sysaclrrprestservices.php/');
+          //    print_r($this->restApiBaseUrl.$this->restApiEndPoint.$this->restApiEndPointFunction);
+          $this->setRestApiFullPathUrl($this->restApiBaseUrl . $this->restApiEndPoint . $this->restApiEndPointFunction);
+          }   else if (substr($endPointFunction, -18) == '_sysServicesGroups') {
+          $this->setRestApiEndPoint('sysservicesgroups.php/');
+          //    print_r($this->restApiBaseUrl.$this->restApiEndPoint.$this->restApiEndPointFunction);
+          $this->setRestApiFullPathUrl($this->restApiBaseUrl . $this->restApiEndPoint . $this->restApiEndPointFunction);
+          }   else if (substr($endPointFunction, -19) == '_sysAclRestservices') {
+          $this->setRestApiEndPoint('sysaclrestservices.php/');
+          //    print_r($this->restApiBaseUrl.$this->restApiEndPoint.$this->restApiEndPointFunction);
+          $this->setRestApiFullPathUrl($this->restApiBaseUrl . $this->restApiEndPoint . $this->restApiEndPointFunction);
+          }   else if (substr($endPointFunction, -20) == '_sysAssignDefinition') {
+          $this->setRestApiEndPoint('sysassigndefinition.php/');
+          //    print_r($this->restApiBaseUrl.$this->restApiEndPoint.$this->restApiEndPointFunction);
+          $this->setRestApiFullPathUrl($this->restApiBaseUrl . $this->restApiEndPoint . $this->restApiEndPointFunction);
+          }   else if (substr($endPointFunction, -25) == '_sysAssignDefinitionRoles') {
+          $this->setRestApiEndPoint('sysassigndefinitionroles.php/');
+          //    print_r($this->restApiBaseUrl.$this->restApiEndPoint.$this->restApiEndPointFunction);
+          $this->setRestApiFullPathUrl($this->restApiBaseUrl . $this->restApiEndPoint . $this->restApiEndPointFunction);
+          }   else if (substr($endPointFunction, -8) == '_pgClass') {
+          $this->setRestApiEndPoint('pgclass.php/');
+          //    print_r($this->restApiBaseUrl.$this->restApiEndPoint.$this->restApiEndPointFunction);
+          $this->setRestApiFullPathUrl($this->restApiBaseUrl . $this->restApiEndPoint . $this->restApiEndPointFunction);
+          }   else if (substr($endPointFunction, -21) == '_sysOperationTypesRrp') {
+          $this->setRestApiEndPoint('sysoperationtypesrrp.php/');
+          //    print_r($this->restApiBaseUrl.$this->restApiEndPoint.$this->restApiEndPointFunction);
+          $this->setRestApiFullPathUrl($this->restApiBaseUrl . $this->restApiEndPoint . $this->restApiEndPointFunction);
+          }   else if (substr($endPointFunction, -16) == '_sysAclActionRrp') {
+          $this->setRestApiEndPoint('sysaclactionrrp.php/');
+          //    print_r($this->restApiBaseUrl.$this->restApiEndPoint.$this->restApiEndPointFunction);
+          $this->setRestApiFullPathUrl($this->restApiBaseUrl . $this->restApiEndPoint . $this->restApiEndPointFunction);
+          }   else if (substr($endPointFunction, -28) == '_sysAclActionRrpRestservices') {
+          $this->setRestApiEndPoint('sysaclactionrrprestservices.php/');
+          //    print_r($this->restApiBaseUrl.$this->restApiEndPoint.$this->restApiEndPointFunction);
+          $this->setRestApiFullPathUrl($this->restApiBaseUrl . $this->restApiEndPoint . $this->restApiEndPointFunction);
+          }   else if (substr($endPointFunction, -21) == '_infoUsersSendingMail') {
+          $this->setRestApiEndPoint('infouserssendingmail.php/');
+          //    print_r($this->restApiBaseUrl.$this->restApiEndPoint.$this->restApiEndPointFunction);
+          $this->setRestApiFullPathUrl($this->restApiBaseUrl . $this->restApiEndPoint . $this->restApiEndPointFunction);
+          }   else if (substr($endPointFunction, -18) == '_actProcessConfirm') {
+          $this->setRestApiEndPoint('actprocessconfirm.php/');
+          //    print_r($this->restApiBaseUrl.$this->restApiEndPoint.$this->restApiEndPointFunction);
+          $this->setRestApiFullPathUrl($this->restApiBaseUrl . $this->restApiEndPoint . $this->restApiEndPointFunction);
+          }   else if (substr($endPointFunction, -11) == '_sysSectors') {
+          $this->setRestApiEndPoint('syssectors.php/');
+          //    print_r($this->restApiBaseUrl.$this->restApiEndPoint.$this->restApiEndPointFunction);
+          $this->setRestApiFullPathUrl($this->restApiBaseUrl . $this->restApiEndPoint . $this->restApiEndPointFunction);
+          }   else if (substr($endPointFunction, -15) == '_sysCorporation') {
+          $this->setRestApiEndPoint('syscorporation.php/');
+          //    print_r($this->restApiBaseUrl.$this->restApiEndPoint.$this->restApiEndPointFunction);
+          $this->setRestApiFullPathUrl($this->restApiBaseUrl . $this->restApiEndPoint . $this->restApiEndPointFunction);
+          }   else if (substr($endPointFunction, -12) == '_sysSubjects') {
+          $this->setRestApiEndPoint('syssubjects.php/');
+          //    print_r($this->restApiBaseUrl.$this->restApiEndPoint.$this->restApiEndPointFunction);
+          $this->setRestApiFullPathUrl($this->restApiBaseUrl . $this->restApiEndPoint . $this->restApiEndPointFunction);
+          }   else if (substr($endPointFunction, -10) == '_sysParams') {
+          $this->setRestApiEndPoint('sysparams.php/');
+          //    print_r($this->restApiBaseUrl.$this->restApiEndPoint.$this->restApiEndPointFunction);
+          $this->setRestApiFullPathUrl($this->restApiBaseUrl . $this->restApiEndPoint . $this->restApiEndPointFunction);
+          } else if (substr($endPointFunction, -11) == '_InfoDuyuru') {
+          $this->setRestApiEndPoint('infoduyuru.php/');
+          //    print_r($this->restApiBaseUrl.$this->restApiEndPoint.$this->restApiEndPointFunction);
+          $this->setRestApiFullPathUrl($this->restApiBaseUrl . $this->restApiEndPoint . $this->restApiEndPointFunction);
+          } else if (substr($endPointFunction, -11) == '_sysokultur') {
+          $this->setRestApiEndPoint('sysokultur.php/');
+          //    print_r($this->restApiBaseUrl.$this->restApiEndPoint.$this->restApiEndPointFunction);
+          $this->setRestApiFullPathUrl($this->restApiBaseUrl . $this->restApiEndPoint . $this->restApiEndPointFunction);
+          } else if (substr($endPointFunction, -24) == '_sysogretmenbranstipleri') {
+          $this->setRestApiEndPoint('sysogretmenbranstipleri.php/');
+          //    print_r($this->restApiBaseUrl.$this->restApiEndPoint.$this->restApiEndPointFunction);
+          $this->setRestApiFullPathUrl($this->restApiBaseUrl . $this->restApiEndPoint . $this->restApiEndPointFunction);
+          }
+         */
+    }
+
     /**
      * set Hmac object for HMAC security
      * @param \vendor\hmac\Hmac $hmacObj
