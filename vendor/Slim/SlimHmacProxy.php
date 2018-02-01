@@ -33,6 +33,17 @@ class SlimHmacProxy extends \Proxy\Proxy {
                                    
         //**---- SysOkulTur -------------------        
         
+        //** SysOgretmenBransTipleri ----------------------
+                                    'pkDelete_sysogretmenbranstipleri' => 'restApiDefaultCall', 
+                                    'pkInsert_sysogretmenbranstipleri' => 'restApiDefaultCall',
+                                    'pkUpdate_sysogretmenbranstipleri' => 'restApiDefaultCall',
+                                    'pkUpdateMakeActiveOrPassive_sysogretmenbranstipleri' => 'restApiDefaultCall',
+                                      
+                                    'FillOkulTurleriCmb_sysogretmenbranstipleri' => 'restApiDefaultCall',
+                                    'pkFillOkulTurleri_sysogretmenbranstipleri' => 'restApiDefaultCall',
+                                    
+                                   
+        //**---- SysOgretmenBransTipleri -------------------        
         
         
         //** leftnavigation ----------------------
@@ -1150,6 +1161,15 @@ class SlimHmacProxy extends \Proxy\Proxy {
     public function setEndPointByClosure(Array $EndPointClosure = null) {  
        
         $endPointFunction = $this->getRestApiEndPointFunction();
+        
+       
+        $endPointFunctionLen = strlen($endPointFunction); 
+        $endPointFunctionPos = strrpos($endPointFunction, "_");
+        $endPointFunctionStart =$endPointFunctionLen -$endPointFunctionPos; 
+                
+        $endPoint =  substr($endPointFunction, - $endPointFunctionStart);
+        print_r($endPoint);
+        
         if (substr($endPointFunction, -5) == '_test') {
             //$this->setEndPointUrl("http://localhost/slim2_test/index.php/");
             $this->setRestApiFullPathUrl($this->restApiBaseUrl . $this->restApiEndPoint . $this->restApiEndPointFunction);
@@ -1411,6 +1431,10 @@ class SlimHmacProxy extends \Proxy\Proxy {
             $this->setRestApiFullPathUrl($this->restApiBaseUrl . $this->restApiEndPoint . $this->restApiEndPointFunction);
         } else if (substr($endPointFunction, -11) == '_sysokultur') {
             $this->setRestApiEndPoint('sysokultur.php/');
+            //    print_r($this->restApiBaseUrl.$this->restApiEndPoint.$this->restApiEndPointFunction);
+            $this->setRestApiFullPathUrl($this->restApiBaseUrl . $this->restApiEndPoint . $this->restApiEndPointFunction);
+        } else if (substr($endPointFunction, -24) == '_sysogretmenbranstipleri') {
+            $this->setRestApiEndPoint('sysogretmenbranstipleri.php/');
             //    print_r($this->restApiBaseUrl.$this->restApiEndPoint.$this->restApiEndPointFunction);
             $this->setRestApiFullPathUrl($this->restApiBaseUrl . $this->restApiEndPoint . $this->restApiEndPointFunction);
         }  
