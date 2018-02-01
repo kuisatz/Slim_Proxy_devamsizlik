@@ -1168,8 +1168,198 @@ class SlimHmacProxy extends \Proxy\Proxy {
         $endPointFunctionStart =$endPointFunctionLen -$endPointFunctionPos; 
                 
         $endPoint =  substr($endPointFunction, - $endPointFunctionStart);
-        print_r($endPoint);
+      //  print_r($endPoint);
         
+            
+
+        switch ($endPoint) {
+            case "_test":
+                echo "_test!";
+                break;
+            case "_leftnavigation":
+                $this->setRestApiEndPoint('leftnavigation.php/');
+                break;
+            case "_infoUsers":
+                $this->setRestApiEndPoint('infousers.php/');
+                break;
+            case "_syscountrys":
+                $this->setRestApiEndPoint('syscountrys.php/');
+                break;
+            case "_syscity":
+                $this->setRestApiEndPoint('syscity.php/');
+                break;
+            case "_syslanguage":
+                $this->setRestApiEndPoint('syslanguage.php/');
+                break;
+            case "_sysborough":
+                $this->setRestApiEndPoint('sysborough.php/');
+                break;
+            case "_sysvillage":
+                $this->setRestApiEndPoint('sysvillage.php/');
+                break;
+            case "_blLoginLogout":
+                $this->setRestApiEndPoint('blLoginLogout.php/');
+                break;
+            case "_sysAclRoles":
+                $this->setRestApiEndPoint('sysaclroles.php/');
+                break;
+            case "_sysAclResources":
+                $this->setRestApiEndPoint('sysaclresources.php/');
+                break;
+            case "_sysAclPrivilege":
+                $this->setRestApiEndPoint('sysaclprivilege.php/');
+                break;
+            case "_sysAclRrpMap":
+                $this->setRestApiEndPoint('sysAclRrpMap.php/');
+                break;
+            case "_sysSpecificDefinitions":
+                $this->setRestApiEndPoint('sysspecificdefinitions.php/');
+                break;
+            case "_infoUsersCommunications":
+                $this->setRestApiEndPoint('infouserscommunications.php/');
+                break;
+            case "_infoUsersAddresses":
+                $this->setRestApiEndPoint('infousersaddresses.php/');
+                break;
+            case "_blActivationReport":
+                $this->setRestApiEndPoint('BlActivationReport.php/');
+                break;
+            case "_sysOperationTypes":
+                $this->setRestApiEndPoint('sysOperationTypes.php/');
+                break;
+            case "_sysOperationTypesTools":
+                $this->setRestApiEndPoint('sysoperationtypestools.php/');
+                break;
+            case "_infoError":
+                $this->setRestApiEndPoint('infoerror.php/');
+                break;
+            case "_sysUnits":
+                $this->setRestApiEndPoint('sysunits.php/');
+                break;
+            case "_hstryLogin":
+                $this->setRestApiEndPoint('hstrylogin.php/');
+                break;
+            case "_blAdminActivationReport":
+                $this->setRestApiEndPoint('bladminactivationreport.php/');
+                break;
+            case "_logConnection":
+                $this->setRestApiEndPoint('logconnection.php/');
+                break;
+            case "_logServices":
+                $this->setRestApiEndPoint('logservices.php/');
+                break;
+            case "_logAdmin":
+                $this->setRestApiEndPoint('logadmin.php/');
+                break;
+            case "_sysCertifications":
+                $this->setRestApiEndPoint('syscertifications.php/');
+                break;
+            case "_sysUnitSystems":
+                $this->setRestApiEndPoint('sysunitsystems.php/');
+                break;
+            case "_infoUsersSocialmedia":
+                $this->setRestApiEndPoint('infouserssocialmedia.php/');
+                break;
+            case "_sysSocialMedia":
+                $this->setRestApiEndPoint('syssocialmedia.php/');
+                break;
+            case "_sysMailServer":
+                $this->setRestApiEndPoint('sysmailserver.php/');
+                break;
+            case "_sysClusters":
+                $this->setRestApiEndPoint('sysclusters.php/');
+                break;
+            case "_infoUsersVerbal":
+                $this->setRestApiEndPoint('infousersverbal.php/');
+                break;
+            case "_infoUsersProductsServices":
+                $this->setRestApiEndPoint('infousersproductsservices.php/');
+                break;
+            case "_sysMembershipTypes":
+                $this->setRestApiEndPoint('sysmembershiptypes.php/');
+                break;
+            case "_sysAclRrp":
+                $this->setRestApiEndPoint('sysaclrrp.php/');
+                break;
+            case "_sysUniversities":
+                $this->setRestApiEndPoint('sysuniversities.php/');
+                break;
+            case "_sysMenuTypes":
+                $this->setRestApiEndPoint('sysmenutypes.php/');
+                break;
+            case "_sysAclModules":
+                $this->setRestApiEndPoint('sysaclmodules.php/');
+                break;
+            case "_sysAclActions":
+                $this->setRestApiEndPoint('sysaclactions.php/');
+                break;
+            case "_sysAclMenuTypesActions":
+                $this->setRestApiEndPoint('sysaclmenutypesactions.php/');
+                break;
+            case "_sysAclRrpRestservices":
+                $this->setRestApiEndPoint('sysaclrrprestservices.php/');
+                break;
+            case "_sysServicesGroups":
+                $this->setRestApiEndPoint('sysservicesgroups.php/');
+                break;
+            case "_sysAclRestservices":
+                $this->setRestApiEndPoint('sysaclrestservices.php/');
+                break;
+            case "_sysAssignDefinition":
+                $this->setRestApiEndPoint('sysassigndefinitionroles.php/');
+                break;
+            case "_sysAssignDefinitionRoles":
+                $this->setRestApiEndPoint('sysassigndefinitionroles.php/');
+                break;
+            case "_pgClass":
+                $this->setRestApiEndPoint('pgclass.php/');
+                break;
+            case "_sysOperationTypesRrp":
+                $this->setRestApiEndPoint('sysoperationtypesrrp.php/');
+                break;
+            case "_sysAclActionRrp":
+                $this->setRestApiEndPoint('sysaclactionrrp.php/');
+                break;
+            case "_sysAclActionRrpRestservices":
+                $this->setRestApiEndPoint('sysaclactionrrprestservices.php/');
+                break;
+            case "_infoUsersSendingMail":
+                $this->setRestApiEndPoint('infouserssendingmail.php/');
+                break;
+            case "_actProcessConfirm":
+                $this->setRestApiEndPoint('actprocessconfirm.php/');
+                break;
+            case "_sysSectors":
+                $this->setRestApiEndPoint('syssectors.php/');
+                break;
+            case "_sysCorporation":
+                $this->setRestApiEndPoint('syscorporation.php/');
+                break;
+            case "_sysSubjects":
+                $this->setRestApiEndPoint('syssubjects.php/');
+                break;
+            case "_sysParams":
+                $this->setRestApiEndPoint('sysparams.php/');
+                break;
+            case "_InfoDuyuru":
+                $this->setRestApiEndPoint('infoduyuru.php/');
+                break;
+            case "_sysokultur":
+                $this->setRestApiEndPoint('sysokultur.php/');
+                break;
+            case "_sysogretmenbranstipleri":
+                $this->setRestApiEndPoint('sysogretmenbranstipleri.php/');
+                break;
+            
+            default:
+                echo "EndPoint Bulunamadı ...... ";
+        }
+
+          //    print_r($this->restApiBaseUrl.$this->restApiEndPoint.$this->restApiEndPointFunction);
+            $this->setRestApiFullPathUrl($this->restApiBaseUrl . $this->restApiEndPoint . $this->restApiEndPointFunction);
+            
+        
+        /*
         if (substr($endPointFunction, -5) == '_test') {
             //$this->setEndPointUrl("http://localhost/slim2_test/index.php/");
             $this->setRestApiFullPathUrl($this->restApiBaseUrl . $this->restApiEndPoint . $this->restApiEndPointFunction);
@@ -1218,7 +1408,7 @@ class SlimHmacProxy extends \Proxy\Proxy {
             //    print_r($this->restApiBaseUrl.$this->restApiEndPoint.$this->restApiEndPointFunction);
             $this->setRestApiFullPathUrl($this->restApiBaseUrl . $this->restApiEndPoint . $this->restApiEndPointFunction);
         }else if (substr($endPointFunction, -13) == '_sysAclRrpMap') {
-            $this->setRestApiEndPoint('sysAclRrpMap.php/');
+            $this->setRestApiEndPoint('sysaclrrpmap.php/');
             //    print_r($this->restApiBaseUrl.$this->restApiEndPoint.$this->restApiEndPointFunction);
             $this->setRestApiFullPathUrl($this->restApiBaseUrl . $this->restApiEndPoint . $this->restApiEndPointFunction);
         }  else if (substr($endPointFunction, -23) == '_sysSpecificDefinitions') {
@@ -1226,7 +1416,7 @@ class SlimHmacProxy extends \Proxy\Proxy {
             //    print_r($this->restApiBaseUrl.$this->restApiEndPoint.$this->restApiEndPointFunction);
             $this->setRestApiFullPathUrl($this->restApiBaseUrl . $this->restApiEndPoint . $this->restApiEndPointFunction);
         } else if (substr($endPointFunction, -24) == '_infoUsersCommunications') {
-            $this->setRestApiEndPoint('infoUsersCommunications.php/');
+            $this->setRestApiEndPoint('infouserscommunications.php/');
             //    print_r($this->restApiBaseUrl.$this->restApiEndPoint.$this->restApiEndPointFunction);
             $this->setRestApiFullPathUrl($this->restApiBaseUrl . $this->restApiEndPoint . $this->restApiEndPointFunction);
         }else if (substr($endPointFunction, -19) == '_infoUsersAddresses') {
@@ -1234,7 +1424,7 @@ class SlimHmacProxy extends \Proxy\Proxy {
             //    print_r($this->restApiBaseUrl.$this->restApiEndPoint.$this->restApiEndPointFunction);
             $this->setRestApiFullPathUrl($this->restApiBaseUrl . $this->restApiEndPoint . $this->restApiEndPointFunction);
         }else if (substr($endPointFunction, -19) == '_blActivationReport') {
-            $this->setRestApiEndPoint('blActivationReport.php/');
+            $this->setRestApiEndPoint('BlActivationReport.php/');
             //    print_r($this->restApiBaseUrl.$this->restApiEndPoint.$this->restApiEndPointFunction);
             $this->setRestApiFullPathUrl($this->restApiBaseUrl . $this->restApiEndPoint . $this->restApiEndPointFunction);
         }else if (substr($endPointFunction, -18) == '_sysOperationTypes') {
@@ -1389,39 +1579,7 @@ class SlimHmacProxy extends \Proxy\Proxy {
             $this->setRestApiEndPoint('syssubjects.php/');
             //    print_r($this->restApiBaseUrl.$this->restApiEndPoint.$this->restApiEndPointFunction);
             $this->setRestApiFullPathUrl($this->restApiBaseUrl . $this->restApiEndPoint . $this->restApiEndPointFunction);
-        }   else if (substr($endPointFunction, -8) == '_sysLaws') {
-            $this->setRestApiEndPoint('syslaws.php/');
-            //    print_r($this->restApiBaseUrl.$this->restApiEndPoint.$this->restApiEndPointFunction);
-            $this->setRestApiFullPathUrl($this->restApiBaseUrl . $this->restApiEndPoint . $this->restApiEndPointFunction);
-        }   else if (substr($endPointFunction, -10) == '_infoExams') {
-            $this->setRestApiEndPoint('infoexams.php/');
-            //    print_r($this->restApiBaseUrl.$this->restApiEndPoint.$this->restApiEndPointFunction);
-            $this->setRestApiFullPathUrl($this->restApiBaseUrl . $this->restApiEndPoint . $this->restApiEndPointFunction);
-        }   else if (substr($endPointFunction, -14) == '_infoQuestions') {
-            $this->setRestApiEndPoint('infoquestions.php/');
-            //    print_r($this->restApiBaseUrl.$this->restApiEndPoint.$this->restApiEndPointFunction);
-            $this->setRestApiFullPathUrl($this->restApiBaseUrl . $this->restApiEndPoint . $this->restApiEndPointFunction);
-        }   else if (substr($endPointFunction, -22) == '_infoQuestionsSubjects') {
-            $this->setRestApiEndPoint('infoquestionssubjects.php/');
-            //    print_r($this->restApiBaseUrl.$this->restApiEndPoint.$this->restApiEndPointFunction);
-            $this->setRestApiFullPathUrl($this->restApiBaseUrl . $this->restApiEndPoint . $this->restApiEndPointFunction);
-        }   else if (substr($endPointFunction, -20) == '_infoQuestionAnswers') {
-            $this->setRestApiEndPoint('infoquestionanswers.php/');
-            //    print_r($this->restApiBaseUrl.$this->restApiEndPoint.$this->restApiEndPointFunction);
-            $this->setRestApiFullPathUrl($this->restApiBaseUrl . $this->restApiEndPoint . $this->restApiEndPointFunction);
-        }   else if (substr($endPointFunction, -17) == '_infoExamQuestion') {
-            $this->setRestApiEndPoint('infoexamquestion.php/');
-            //    print_r($this->restApiBaseUrl.$this->restApiEndPoint.$this->restApiEndPointFunction);
-            $this->setRestApiFullPathUrl($this->restApiBaseUrl . $this->restApiEndPoint . $this->restApiEndPointFunction);
-        }   else if (substr($endPointFunction, -17) == '_infoExamSubjects') {
-            $this->setRestApiEndPoint('infoexamsubjects.php/');
-            //    print_r($this->restApiBaseUrl.$this->restApiEndPoint.$this->restApiEndPointFunction);
-            $this->setRestApiFullPathUrl($this->restApiBaseUrl . $this->restApiEndPoint . $this->restApiEndPointFunction);
-        }   else if (substr($endPointFunction, -20) == '_infoQuestionSources') {
-            $this->setRestApiEndPoint('infoquestionsources.php/');
-            //    print_r($this->restApiBaseUrl.$this->restApiEndPoint.$this->restApiEndPointFunction);
-            $this->setRestApiFullPathUrl($this->restApiBaseUrl . $this->restApiEndPoint . $this->restApiEndPointFunction);
-        }  else if (substr($endPointFunction, -10) == '_sysParams') {
+        }   else if (substr($endPointFunction, -10) == '_sysParams') {
             $this->setRestApiEndPoint('sysparams.php/');
             //    print_r($this->restApiBaseUrl.$this->restApiEndPoint.$this->restApiEndPointFunction);
             $this->setRestApiFullPathUrl($this->restApiBaseUrl . $this->restApiEndPoint . $this->restApiEndPointFunction);
@@ -1438,7 +1596,10 @@ class SlimHmacProxy extends \Proxy\Proxy {
             //    print_r($this->restApiBaseUrl.$this->restApiEndPoint.$this->restApiEndPointFunction);
             $this->setRestApiFullPathUrl($this->restApiBaseUrl . $this->restApiEndPoint . $this->restApiEndPointFunction);
         }  
-    }
+    */
+        
+        
+        }
 
     
     
