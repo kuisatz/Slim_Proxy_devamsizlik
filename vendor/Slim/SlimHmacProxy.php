@@ -21,6 +21,19 @@ class SlimHmacProxy extends \Proxy\Proxy {
                                     'getDynamicForm_test' => 'restApiDefaultCall',
 
         
+        
+          //** SysUcretDonemleri ----------------------
+                                    'pkDelete_sysucretdonemleri' => 'restApiDefaultCall', 
+                                    'pkInsert_sysucretdonemleri' => 'restApiDefaultCall',
+                                    'pkUpdate_sysucretdonemleri' => 'restApiDefaultCall',
+                                    'pkUpdateMakeActiveOrPassive_sysucretdonemleri' => 'restApiDefaultCall',
+                                      
+                                    'FillUcretDonemleriCmb_sysucretdonemleri' => 'restApiDefaultCall',
+                                    'pkFillUcretDonemleri_sysucretdonemleri' => 'restApiDefaultCall',
+                                    
+                                   
+        //**---- SysUcretDonemleri -------------------   
+        
          //** SysSbGorev ----------------------
                                     'pkDelete_syssbgorev' => 'restApiDefaultCall', 
                                     'pkInsert_syssbgorev' => 'restApiDefaultCall',
@@ -1193,6 +1206,9 @@ class SlimHmacProxy extends \Proxy\Proxy {
                 echo "_test!";
                 break;
             
+            case "_sysucretdonemleri":
+                $this->setRestApiEndPoint('sysucretdonemleri.php/');
+                break;
             case "_syssbgorev":
                 $this->setRestApiEndPoint('syssbgorev.php/');
                 break;
