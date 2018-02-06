@@ -21,7 +21,18 @@ class SlimHmacProxy extends \Proxy\Proxy {
                                     'getDynamicForm_test' => 'restApiDefaultCall',
 
         
-        
+           //** InfoNobetDevamsizligi ----------------------
+                                    'pkDelete_infonobetdevamsizligi' => 'restApiDefaultCall', 
+                                    'pkInsert_infonobetdevamsizligi' => 'restApiDefaultCall',
+                                    'pkUpdate_infonobetdevamsizligi' => 'restApiDefaultCall',
+                                    'pkUpdateMakeActiveOrPassive_infonobetdevamsizligi' => 'restApiDefaultCall',
+                                      
+                                    'FillNobetDevamsizligiNowCmb_infonobetdevamsizligi' => 'restApiDefaultCall',
+                                    'pkFillNobetDevamsizligi_infonobetdevamsizligi' => 'restApiDefaultCall',
+                                    'pkFillNobetDevamsizligiDshBrd_infonobetdevamsizligi' => 'restApiDefaultCall',
+                                    
+                                   
+        //**---- InfoNobetDevamsizligi -------------------   
          //** InfoNobetProgrami ----------------------
                                     'pkDelete_infonobetprogrami' => 'restApiDefaultCall', 
                                     'pkInsert_infonobetprogrami' => 'restApiDefaultCall',
@@ -1219,7 +1230,9 @@ class SlimHmacProxy extends \Proxy\Proxy {
                 echo "_test!";
                 break;
             
-            
+             case "_infonobetdevamsizligi":
+                $this->setRestApiEndPoint('infonobetdevamsizligi.php/');
+                break;
             case "_infonobetprogrami":
                 $this->setRestApiEndPoint('infonobetprogrami.php/');
                 break;
