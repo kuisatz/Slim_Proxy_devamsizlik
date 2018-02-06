@@ -22,6 +22,19 @@ class SlimHmacProxy extends \Proxy\Proxy {
 
         
         
+         //** InfoNobetProgrami ----------------------
+                                    'pkDelete_infonobetprogrami' => 'restApiDefaultCall', 
+                                    'pkInsert_infonobetprogrami' => 'restApiDefaultCall',
+                                    'pkUpdate_infonobetprogrami' => 'restApiDefaultCall',
+                                    'pkUpdateMakeActiveOrPassive_infonobetprogrami' => 'restApiDefaultCall',
+                                      
+                                    'FillNobetBilgileriNowCmb_infonobetprogrami' => 'restApiDefaultCall',
+                                    'pkFillNobetBilgileri_infonobetprogrami' => 'restApiDefaultCall',
+                                    'pkFillNobetBilgileriDshBrd_infonobetprogrami' => 'restApiDefaultCall',
+                                    
+                                   
+        //**---- InfoNobetProgrami -------------------   
+        
           //** SysUcretDonemleri ----------------------
                                     'pkDelete_sysucretdonemleri' => 'restApiDefaultCall', 
                                     'pkInsert_sysucretdonemleri' => 'restApiDefaultCall',
@@ -1206,6 +1219,10 @@ class SlimHmacProxy extends \Proxy\Proxy {
                 echo "_test!";
                 break;
             
+            
+            case "_infonobetprogrami":
+                $this->setRestApiEndPoint('infonobetprogrami.php/');
+                break;
             case "_sysucretdonemleri":
                 $this->setRestApiEndPoint('sysucretdonemleri.php/');
                 break;
