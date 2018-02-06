@@ -1230,7 +1230,7 @@ class SlimHmacProxy extends \Proxy\Proxy {
                 echo "_test!";
                 break;
             
-             case "_infonobetdevamsizligi":
+            case "_infonobetdevamsizligi":
                 $this->setRestApiEndPoint('infonobetdevamsizligi.php/');
                 break;
             case "_infonobetprogrami":
