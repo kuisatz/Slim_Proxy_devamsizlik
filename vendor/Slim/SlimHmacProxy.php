@@ -21,6 +21,17 @@ class SlimHmacProxy extends \Proxy\Proxy {
                                     'getDynamicForm_test' => 'restApiDefaultCall',
 
         
+         //** SysDevamsizlikTipleri ----------------------
+                                    'pkDelete_sysdevamsizliktipleri' => 'restApiDefaultCall', 
+                                    'pkInsert_sysdevamsizliktipleri' => 'restApiDefaultCall',
+                                    'pkUpdate_sysdevamsizliktipleri' => 'restApiDefaultCall',
+                                    'pkUpdateMakeActiveOrPassive_sysdevamsizliktipleri' => 'restApiDefaultCall',
+                                      
+                                    'FillDevamsizlikTipleriCmb_sysdevamsizliktipleri' => 'restApiDefaultCall',
+                                    'pkFillDevamsizlikTipleri_sysdevamsizliktipleri' => 'restApiDefaultCall',
+            
+                                   
+        //**---- SysDevamsizlikTipleri -------------------   
            //** InfoNobetDevamsizligi ----------------------
                                     'pkDelete_infonobetdevamsizligi' => 'restApiDefaultCall', 
                                     'pkInsert_infonobetdevamsizligi' => 'restApiDefaultCall',
@@ -1230,6 +1241,10 @@ class SlimHmacProxy extends \Proxy\Proxy {
                 echo "_test!";
                 break;
             
+            
+            case "_sysdevamsizliktipleri":
+                $this->setRestApiEndPoint('sysdevamsizliktipleri.php/');
+                break;
             case "_infonobetdevamsizligi":
                 $this->setRestApiEndPoint('infonobetdevamsizligi.php/');
                 break;
