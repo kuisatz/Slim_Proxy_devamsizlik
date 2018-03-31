@@ -21,6 +21,20 @@ class SlimHmacProxy extends \Proxy\Proxy {
                                     'getDynamicForm_test' => 'restApiDefaultCall',
 
         
+        
+        
+          //** SysDusmeOncelikleri ----------------------
+                                    'pkDelete_sysdusmeOncelikleri' => 'restApiDefaultCall', 
+                                    'pkInsert_sysdusmeOncelikleri' => 'restApiDefaultCall',
+                                    'pkUpdate_sysdusmeOncelikleri' => 'restApiDefaultCall',
+                                    'pkUpdateMakeActiveOrPassive_sysdusmeOncelikleri' => 'restApiDefaultCall',
+                                      
+                                    'FillDusmeOncelikleriCmb_sysdusmeOncelikleri' => 'restApiDefaultCall',
+                                    'pkFillDusmeOncelikleri_sysdusmeOncelikleri' => 'restApiDefaultCall',
+            
+        //**---- SysDusmeOncelikleri -------------------   
+        
+        
         //** SysKurumGruplari ----------------------
                                     'pkDelete_sysKurumGruplari' => 'restApiDefaultCall', 
                                     'pkInsert_sysKurumGruplari' => 'restApiDefaultCall',
@@ -1278,9 +1292,13 @@ class SlimHmacProxy extends \Proxy\Proxy {
                 break;
             
             
+            
+             case "_sysdusmeOncelikleri":
+                $this->setRestApiEndPoint('sysdusmeoncelikleri.php/');
+                break; 
             case "_sysKurumGruplari":
-            $this->setRestApiEndPoint('syskurumgruplari.php/');
-            break;
+                $this->setRestApiEndPoint('syskurumgruplari.php/');
+                break;
             case "_sysKurumTurleri":
                 $this->setRestApiEndPoint('syskurumturleri.php/');
                 break;
