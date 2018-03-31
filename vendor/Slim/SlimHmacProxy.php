@@ -38,8 +38,8 @@ class SlimHmacProxy extends \Proxy\Proxy {
                                     'pkUpdate_sysKurumTurleri' => 'restApiDefaultCall',
                                     'pkUpdateMakeActiveOrPassive_sysKurumTurleri' => 'restApiDefaultCall',
                                       
-                                    'FillKurumlarCmb_sysKurumTurleri' => 'restApiDefaultCall',
-                                    'pkFillKurumlar_sysKurumTurleri' => 'restApiDefaultCall',
+                                    'FillKurumTurleriCmb_sysKurumTurleri' => 'restApiDefaultCall',
+                                    'pkFillKurumTipleri_sysKurumTurleri' => 'restApiDefaultCall',
             
         //**---- SysKurumTurleri -------------------   
         
