@@ -21,6 +21,18 @@ class SlimHmacProxy extends \Proxy\Proxy {
                                     'getDynamicForm_test' => 'restApiDefaultCall',
 
         
+          //** SysKbsGorevTipleri ----------------------
+                                    'pkDelete_syskbsGorevTipleri' => 'restApiDefaultCall', 
+                                    'pkInsert_syskbsGorevTipleri' => 'restApiDefaultCall',
+                                    'pkUpdate_syskbsGorevTipleri' => 'restApiDefaultCall',
+                                    'pkUpdateMakeActiveOrPassive_syskbsGorevTipleri' => 'restApiDefaultCall',
+                                      
+                                    'FillKbsGorevTipleriCmb_syskbsGorevTipleri' => 'restApiDefaultCall',
+                                    'pkFillKbsGorevTipleri_syskbsGorevTipleri' => 'restApiDefaultCall',
+            
+        //**---- SysKbsGorevTipleri -------------------   
+        
+        
         //** SysHesaplanmaSekilleri ----------------------
                                     'pkDelete_syshesaplanmaSekilleri' => 'restApiDefaultCall', 
                                     'pkInsert_syshesaplanmaSekilleri' => 'restApiDefaultCall',
@@ -1300,7 +1312,9 @@ class SlimHmacProxy extends \Proxy\Proxy {
                 echo "_test!";
                 break;
             
-            
+            case "_syskbsGorevTipleri":
+                $this->setRestApiEndPoint('syskbsgorevtipleri.php/');
+                break; 
             case "_syshesaplanmaSekilleri":
                 $this->setRestApiEndPoint('syshesaplanmasekilleri.php/');
                 break; 
