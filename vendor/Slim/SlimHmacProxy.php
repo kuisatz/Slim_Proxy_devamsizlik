@@ -21,6 +21,42 @@ class SlimHmacProxy extends \Proxy\Proxy {
                                     'getDynamicForm_test' => 'restApiDefaultCall',
 
         
+        //** SysKurumGruplari ----------------------
+                                    'pkDelete_sysKurumGruplari' => 'restApiDefaultCall', 
+                                    'pkInsert_sysKurumGruplari' => 'restApiDefaultCall',
+                                    'pkUpdate_sysKurumGruplari' => 'restApiDefaultCall',
+                                    'pkUpdateMakeActiveOrPassive_sysKurumGruplari' => 'restApiDefaultCall',
+                                      
+                                    'FillKurumGruplariCmb_sysKurumGruplari' => 'restApiDefaultCall',
+                                    'pkFillKurumGruplari_sysKurumGruplari' => 'restApiDefaultCall',
+            
+        //**---- SysKurumGruplari -------------------   
+        
+           //** SysKurumTurleri ----------------------
+                                    'pkDelete_sysKurumTurleri' => 'restApiDefaultCall', 
+                                    'pkInsert_sysKurumTurleri' => 'restApiDefaultCall',
+                                    'pkUpdate_sysKurumTurleri' => 'restApiDefaultCall',
+                                    'pkUpdateMakeActiveOrPassive_sysKurumTurleri' => 'restApiDefaultCall',
+                                      
+                                    'FillKurumlarCmb_sysKurumTurleri' => 'restApiDefaultCall',
+                                    'pkFillKurumlar_sysKurumTurleri' => 'restApiDefaultCall',
+            
+        //**---- SysKurumTurleri -------------------   
+        
+         //** InfoKurumlar ----------------------
+                                    'pkDelete_infokurumlar' => 'restApiDefaultCall', 
+                                    'pkInsert_infokurumlar' => 'restApiDefaultCall',
+                                    'pkUpdate_infokurumlar' => 'restApiDefaultCall',
+                                    'pkUpdateMakeActiveOrPassive_infokurumlar' => 'restApiDefaultCall',
+                                      
+                                    'FillKurumlarCmb_infokurumlar' => 'restApiDefaultCall',
+                                    'pkFillKurumlar_infokurumlar' => 'restApiDefaultCall',
+            
+            
+                                   
+        //**---- InfoKurumlar -------------------   
+        
+        
          //** SysDevamsizlikTipleri ----------------------
                                     'pkDelete_sysdevamsizliktipleri' => 'restApiDefaultCall', 
                                     'pkInsert_sysdevamsizliktipleri' => 'restApiDefaultCall',
@@ -1242,7 +1278,16 @@ class SlimHmacProxy extends \Proxy\Proxy {
                 break;
             
             
-            case "_sysdevamsizliktipleri":
+            case "_sysKurumGruplari":
+            $this->setRestApiEndPoint('syskurumgruplari.php/');
+            break;
+            case "_sysKurumTurleri":
+                $this->setRestApiEndPoint('syskurumturleri.php/');
+                break;
+            case "_infokurumlar":
+                $this->setRestApiEndPoint('infokurumlar.php/');
+                break;
+             case "_sysdevamsizliktipleri":
                 $this->setRestApiEndPoint('sysdevamsizliktipleri.php/');
                 break;
             case "_infonobetdevamsizligi":
