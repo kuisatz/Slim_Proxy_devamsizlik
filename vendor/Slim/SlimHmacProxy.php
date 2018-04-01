@@ -21,6 +21,19 @@ class SlimHmacProxy extends \Proxy\Proxy {
                                     'getDynamicForm_test' => 'restApiDefaultCall',
 
         
+        //** InfoOgretmenler ----------------------
+                                    'pkDelete_infoOgretmenler' => 'restApiDefaultCall', 
+                                    'pkInsert_infoOgretmenler' => 'restApiDefaultCall',
+                                    'pkUpdate_infoOgretmenler' => 'restApiDefaultCall',
+                                    'pkUpdateMakeActiveOrPassive_infoOgretmenler' => 'restApiDefaultCall',
+                                      
+                                    'FillOkulOgretmenleriCmb_infoOgretmenler' => 'restApiDefaultCall',
+                                    'pkFillOgretmenler_infoOgretmenler' => 'restApiDefaultCall',
+            
+        //**---- InfoOgretmenler -------------------   
+        
+        
+        
           //** SysKbsGorevTipleri ----------------------
                                     'pkDelete_syskbsGorevTipleri' => 'restApiDefaultCall', 
                                     'pkInsert_syskbsGorevTipleri' => 'restApiDefaultCall',
@@ -1312,6 +1325,12 @@ class SlimHmacProxy extends \Proxy\Proxy {
                 echo "_test!";
                 break;
             
+            
+            
+            
+            case "_infoOgretmenler":
+                $this->setRestApiEndPoint('infoogretmenler.php/');
+                break; 
             case "_syskbsGorevTipleri":
                 $this->setRestApiEndPoint('syskbsgorevtipleri.php/');
                 break; 
